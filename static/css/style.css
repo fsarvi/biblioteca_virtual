@@ -1,3 +1,11 @@
+:root{
+    --color-principal: rgb(17, 3, 43);
+    --color-secundario: rgb(201, 248, 228);
+    --color-terciario:  rgba(202, 255, 252, 0.7);
+	--color-cuarto: rgb(49, 0, 0);
+	--color-quinto: #ffffff; 
+}
+
 /* clear para evitar que todos los elementos queden "flotantes" */
 .clear {
 	clear: both;
@@ -25,7 +33,7 @@ p {
 html,
 body {
 	font-family: 'Open Sans', sans-serif;
-	background: rgb(201, 248, 228);
+	background: var(--color-secundario);
 	font-size: 100%;
 }
 
@@ -33,7 +41,7 @@ body {
 
 /* -------------------------------------------------MENU ---------- NAV-BAR ---------------------------------------------------------------- */
 .header {
-	background: rgb(17, 3, 43);
+	background: var(--color-principal);
 	padding: 1.5% 0;
 }
 
@@ -65,7 +73,7 @@ body {
 	font-size: 0.8125em;
 	text-transform: uppercase;
 	padding: 5px 20px;
-	color: #FFF;
+	color: var(--color-quinto);
 	transition: all 0.3s ease;
 	font-weight: 600;
 	text-decoration: none;
@@ -74,8 +82,8 @@ body {
 .menu li a:hover,
 .menu li.active a {
 	border-radius: 20px;
-	background: rgba(202, 255, 252, 0.7);
-	color: rgb(49, 0, 0);
+	background: var(--color-terciario);
+	color: var(--color-cuarto);
 }
 
 #nav .current a {
@@ -225,7 +233,7 @@ ul.buttons {
 
 /*---------------------------------------------------------FOOTER---------------------INPUT DE MENSAJERIA-------------------------------------------------------*/
 .footer {
-	background: rgb(0, 25, 41);
+	background: var(--color-principal);
 	padding: 5% 0;
 }
 
@@ -235,7 +243,7 @@ ul.footer_box {
 }
 
 ul.footer_box h4 {
-	color: rgb(101, 238, 181);
+	color: var(--color-secundario);
 	font-size: 1.1em;
 	text-transform: uppercase;
 	font-weight: 700;
