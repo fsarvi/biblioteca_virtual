@@ -9,7 +9,7 @@ _La Biblioteca Virtual es un proyecto grupal creado con el Framework Django, ade
 ## Autores ✒️
 
 * **Fernando Matuk** - [sdamatuk](https://github.com/sdamatuk)
-* **Matias Barrios** - [matiasbarriosled](https://github.com/matiasbarriosled
+* **Matias Barrios** - [matiasbarriosled](https://github.com/matiasbarriosled)
 * **Edy** - [Edi](#Edi)
 * **Fátima Sarvi** - [fsarvi](https://github.com/fsarvi)
 * **María Páez** - [Mardigan123](https://github.com/Mardigan123)
