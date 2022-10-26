@@ -4,6 +4,7 @@
     --color-terciario:  rgba(202, 255, 252, 0.7);
 	--color-cuarto: rgb(49, 0, 0);
 	--color-quinto: #ffffff; 
+	--color-sombra: #41a2ce29;
 }
 
 /* clear para evitar que todos los elementos queden "flotantes" */
@@ -17,25 +18,28 @@ h5,
 h6,
 h1,
 h2,
-h3 {
-	margin-top: 0;
-}
+h3 {margin-top: 0;}
 
 ul,
-ol {
-	margin: 0;
-}
+ol {margin: 0;}
 
-p {
-	margin: 0;
-}
+p {margin: 0;}
+a {text-decoration: none;}
 
-html,
-body {
+html,body {
 	font-family: 'Open Sans', sans-serif;
 	background: var(--color-secundario);
 	font-size: 100%;
 }
+
+.sombra{
+	box-shadow: -10px 10px 50px var(--color-sombra);
+}
+
+.sombra-lg{
+	box-shadow: 0px 10px 150px var(--color-sombra);
+}
+
 
 
 
@@ -351,4 +355,74 @@ li.youtube a span {
 	width: 55px;
 	display: block;
 	background: url(../images/img-sprite.png)no-repeat -437px -276px;
+}
+
+
+
+
+
+/*######################################################...DESCRIPCION_LIBROS.HTML...######################################################*/
+
+#tf-header {
+    padding: 20px 0;
+    color: #ffffff;
+}
+.breadcrumb {
+    padding: 8px 15px;
+    margin-bottom: 20px;
+    list-style: none;
+    background-color: transparent;
+    border-radius: 4px;
+    margin-left: -10px;
+    margin-top: -10px;
+}
+.breadcrumb > li + li:before {
+    padding: 0 5px;
+    color: #FFF;
+    content: "/\00a0";
+}
+.breadcrumb > li a { color: #ffffff }
+
+#tf-works { padding: 60px 0 }
+
+#tema-sinopsis{
+    padding: 50px 0 
+}
+
+.section-header {
+    padding: 10px 0;
+    text-align: center;
+}
+
+.section-header h2 { text-transform: uppercase }
+.section-header h5 { letter-spacing: 4px }
+.section-header strong {color: #002903;}
+
+.separador span {
+    position: relative;
+}
+.separador span:before,
+.separador span:after {
+    content: "";
+    position: absolute;
+    height: 4px;
+    border-bottom: 1px solid var(--color-principal);
+	box-shadow: 5px 5px 70px var(--color-cuarto);
+    top: 15px;
+    width: 30vw;
+}
+.separador span:before {
+    right: 100%;
+    margin-right: 10px;
+}
+.separador span:after {
+    left: 100%;
+    margin-left: 10px;
+}
+.separador img{
+	width: 15%;
+}
+
+.puntuacion{
+	height: fit-content;
 }
