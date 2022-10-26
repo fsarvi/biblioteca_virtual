@@ -16,7 +16,7 @@ _El proyecto busca cumplir con lo siguiente:_
 
 * **Fernando Matuk** - [sdamatuk](https://github.com/sdamatuk)
 * **Matias Barrios** - [matiasbarriosled](https://github.com/matiasbarriosled)
-* **Edy** - [Edi](#Edi)
+* **Edy** - [Edy](https://github.com/edybarbe)
 * **Fátima Sarvi** - [fsarvi](https://github.com/fsarvi)
 * **María Páez** - [Mardigan123](https://github.com/Mardigan123)
 
