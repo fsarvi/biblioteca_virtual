@@ -10,7 +10,7 @@
             <h1>Sinopsis</h1>
             <ol class="breadcrumb">
                 <li><a href="{% url 'index' %}">Home</a></li>
-                <li><a href="{% url 'sinopsis' %}">Sinopsis</a></li>
+                <li>Sinopsis</li>
             </ol>
         </div>
     </div>
@@ -18,8 +18,8 @@
     <div id="tf-works" class="work-detail">
         <div class="container">
             <div class="section-header">
-                <h2 class="">Detalles del libro: <span><strong>El Gato Negro y otros relatos</strong></span></h2>
-                <h5><em><blockquote>"Perturbadora, atrapante, magnifica"</blockquote> - El Canillita Times</em></h5>
+                <h2 class="">Detalles del libro: <span><strong>{{libro_seleccionado.0}}</strong></span></h2>
+                <h5><em><blockquote>{{libro_seleccionado.11}}</blockquote> - {{libro_seleccionado.12}}</em></h5>
                 <div class="separador"><span><img class="img-fluid" src="{% static 'img/sinopsis/sinopsis.png' %}" alt="..."></span></div>
             </div>
         </div>
@@ -31,23 +31,23 @@
                     <div class="col-md-5 col-md-offset-1">
 
                         <div class="works-block"> 
-                            <img src="{% static 'img/sinopsis/GATO.png' %}" class="img-fluid featured" alt="...">
+                            <img src="{% static 'img/'|add:libro_seleccionado.2|add:'.jpg' %}" class="img-fluid featured" alt="...">
                         </div>
 
                     </div> 
 
                     <div class="col-md-6"> 
-                        <h5 class="media-heading"><strong>El gato negro y otros relatos es una recopilacion de los cuentos mas notables de Poe, en los que destaca <em> El gato negro, William Wilson y La carta robada</em></strong></h5>
+                        <h5 class="media-heading"><strong><em> {{libro_seleccionado.6}}</em></strong></h5>
                         <hr>
                         <dl class="m-3">
                             <dt>Publicado:</dt>
-                            <dd>19 de agosto, 1843</dd>
+                            <dd>{{libro_seleccionado.7}}</dd>
                             <dt>Autor:</dt>
-                            <dd>Edgar Allan Poe</dd>
+                            <dd>{{libro_seleccionado.8}}</dd>
                             <dt>Genero:</dt>
-                            <dd>Horror / Psicologico / Policial</dd>
+                            <dd>{{libro_seleccionado.9}}</dd>
                             <dt>Editorial:</dt>
-                            <dd>Letras de Sopa</dd>
+                            <dd>{{libro_seleccionado.10}}</dd>
                         </dl>
                         <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
                     </div>

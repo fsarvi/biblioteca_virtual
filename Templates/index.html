@@ -18,7 +18,7 @@
 
 					<div class="col-md-3 book_box mb-3">
 							
-						<a href=" {% url 'sinopsis' %} ">
+						<a href=" {% url 'sinopsis' id=titulo.5 %} ">
 						{% comment "" %}
 							|add:imagen|add: YA CUMPLE COMO FILTRO EN LA TEMPLATE
 						{% endcomment %}
@@ -39,13 +39,13 @@
 								
 							<div class="book_desc shadow">
 								
-								<h3><a href="{% url 'sinopsis' %}">{{ titulo.0 }}</a></h3>
+								<h3><a href="{% url 'sinopsis' id=titulo.5 %}">{{ titulo.0 }}</a></h3>
 								<p>{{ titulo.1 }}</p>
 								<span>Puntuacion: </span>
 								<span class="actual">6/10</span><br>
 
 								<ul class="buttons">
-									<li class="cart"><a href="{% url 'sinopsis' %}">Puntuar</a></li>
+									<li class="cart"><a href="{% url 'sinopsis' id=titulo.5 %}">Puntuar</a></li>
 									<li class="book_btn"><a href="#">Leer</a></li>
 									
 									<div class="clear"></div>
@@ -59,8 +59,6 @@
 					<p>Ups! No hay libros disponibles</p>
 				{% endfor %}
 					
-
-
 
 			</div>
 		</div>
