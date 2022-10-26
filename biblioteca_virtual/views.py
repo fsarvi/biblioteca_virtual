@@ -39,8 +39,7 @@ def sinopsis(request, id):
     ["Veni Vidi Vici","Lorem ipsum consectetuer adipiscing","pic20",False,True,"12", "El gato negro y otros relatos es una recopilacion de los cuentos mas notables de Poe, en los que destaca El gato negro, William Wilson y La carta robada", "19 de agosto, 1843", "Edgar Allan Poe", "Horror / Psicologico / Policial","Letras de Sopa", "Perturbadora, atrapante, magnifica", "El Canillita Times"]]
 
     libro_seleccionado = libros[id - 1]
-    print(id)
-    print(libro_seleccionado)
+    
     lista_libros_relacionados = [
     ["El buen hijo","buenhijo"],
     ["Reina del grito","reinagrito"],

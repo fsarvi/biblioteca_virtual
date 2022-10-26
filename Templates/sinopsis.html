@@ -57,44 +57,7 @@
         </div>
     </div>
 
-    <div class="container mb-5 sombra-lg">
-        <div class="row">
-            
-            <h1 class="display-6 text-center">Libros relacionados</h1>
-
-            {% for relacionado in relacionados %}
-            <a class="col-3 col-md-2" href="#">
-                <div class="sombra">
-                    <img class="img-fluid" src="{% static 'img/sinopsis/'|add:relacionado.1|add:'.jpg' %}" alt="">
-                    <h6 class="text-secondary">{{relacionado.0}}</h6>
-                </div>
-            </a>
-            {% endfor %}
-
-        </div>
-    </div>
-    <div class="container mb-5 sombra-lg rounded">
-        <div class="row">
-            <h1 class="display-6 text-center">Opiniones de los lectores</h1>
-            <div class="col-md-4 puntuacion sombra rounded">
-                <h1>Opinion media</h1>
-                <h2>puntaje: 4/5</h2>
-            </div>
-            <div class="col-md-6">
-                
-                {% for usuario in usuarios %}
-                    <div class="m-5">
-                        <div class="row">
-                            <img class="col-2" src="{% static '/img/sinopsis/users.png' %}" alt="">
-                            <h5 class="col-10">{{usuario.0}}</h5>
-                        </div>
-                        <p><em>{{usuario.1}}</em></p>
-                        <span>puntuacion: {{usuario.2}}/5</span>
-                    </div>
-                {% endfor %}
-            </div>
-        </div>
-    </div>
-    
+    {% include 'layouts/partials/relacionados.html' %}
+    {% include 'layouts/partials/opiniones.html' %}
 
 {% endblock content %}
