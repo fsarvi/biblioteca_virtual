@@ -46,4 +46,4 @@ def sinopsis(request):
 
     libros_y_usuarios = {"usuarios":lista_usuarios,"relacionados":lista_libros_relacionados}
 ######################################################################################
-    return render(request,'descripcion_libros.html',libros_y_usuarios)
+    return render(request,'sinopsis.html',libros_y_usuarios)
