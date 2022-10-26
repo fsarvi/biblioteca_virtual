@@ -357,7 +357,7 @@ li.youtube a span {
 
 
 
-/*######################################################...DESCRIPCION_LIBROS.HTML...######################################################*/
+/*######################################################...SINOPSIS.HTML...######################################################*/
 
 #tf-header {
     padding: 20px 0;
@@ -422,4 +422,17 @@ li.youtube a span {
 .puntuacion{
 	height: fit-content;
 }
-/*--------------------- formulario contacto --------------------*/
+
+
+
+/*######################################################...CONTACTO.HTML...######################################################*/
+
+.bg-side-contacto{
+	background-image: url(../img/contacto/img-side.png);
+	height: auto;
+	min-height: auto;
+}
+
+.imagen-contacto{
+	width: 10vh;
+}
