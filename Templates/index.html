@@ -12,169 +12,55 @@
 
 			<div class="row book_box-top">
 
-				<div class="col-md-3 book_box mb-3">
+				<h1 class="display-1"> Bienvenido</h1>
+				<h2 class="display-6 text-secondary">Libros por orden de puntuacion</h2>
+				{% for titulo in titulos %}
 
-					<a href="#">
-						<img src="{% static 'img/pic11.jpg' %}" class="img-fluid" alt=""/>
-						<span class="new-box">
-							<span class="new-label">Nuevo</span>
-						</span>
-						
-						<div class="book_desc shadow">
-						
-							<h3><a href="#">Carpe Diem</a></h3>
-							<p>Lorem ipsum consectetuer adipiscing </p>
-							<span>tu puntuacion: </span>
-							<span class="actual">6/10</span><br>
-
-							<ul class="buttons">
-								<li class="cart"><a href="#">Puntuar</a></li>
-								<li class="book_btn"><a href="#">Leer</a></li>
+					<div class="col-md-3 book_box mb-3">
 							
-								<div class="clear"></div>
-							</ul>
+						<a href=" {% url 'sinopsis' %} ">
+						{% comment "" %}
+							|add:imagen|add: YA CUMPLE COMO FILTRO EN LA TEMPLATE
+						{% endcomment %}
+							<img src="{% static 'img/'|add:titulo.2|add:'.jpg' %}" class="img-fluid" alt=""/>
+
 							
-						</div>
-					</a>
-				</div>
-				
-				<div class="col-md-3 book_box mb-3">
+							{% if titulo.3 %}
+							<span class="new-box">
+								<span class="new-label">Nuevo</span>
+							</span>
+							{% endif %}
 
-					<a href="#">
-						<img src="{% static 'img/pic12.jpg' %}" class="img-fluid" alt=""/>
-						<span class="new-box">
-							<span class="new-label">Nuevo</span>
-						</span>
-						<span class="lectura-box">
-							<span class="lectura-label">Leyendo</span>
-						</span>
+							{% if titulo.4 %}
+							<span class="lectura-box">
+								<span class="lectura-label">Leyendo</span>
+							</span>
+							{% endif %}
+								
+							<div class="book_desc shadow">
+								
+								<h3><a href="{% url 'sinopsis' %}">{{ titulo.0 }}</a></h3>
+								<p>{{ titulo.1 }}</p>
+								<span>Puntuacion: </span>
+								<span class="actual">6/10</span><br>
 
-						<div class="book_desc shadow">
+								<ul class="buttons">
+									<li class="cart"><a href="{% url 'sinopsis' %}">Puntuar</a></li>
+									<li class="book_btn"><a href="#">Leer</a></li>
+									
+									<div class="clear"></div>
+								</ul>
+									
+							</div>
+						</a>
+					</div>
+		
+				{% empty %}
+					<p>Ups! No hay libros disponibles</p>
+				{% endfor %}
+					
 
-							<h3><a href="#">Memento Mori</a></h3>
-							<p>Lorem ipsum consectetuer adipiscing </p>
-							<span>tu puntuacion: </span>
-							<span class="actual">*/10</span><br>
 
-							<ul class="buttons">
-								<li class="cart"><a href="#">Puntuar</a></li>
-								<li class="book_btn"><a href="#">continuar leyendo</a></li>
-								<div class="clear"> </div>
-							</ul>
-
-						</div>
-					</a>
-
-				</div>
-
-				<div class="col-md-3 book_box mb-3">
-
-					<a href="#">
-
-						<img src="{% static 'img/pic13.jpg' %}" class="img-fluid" alt=""/>
-						<span class="new-box">
-							<span class="new-label">Nuevo</span>
-						</span>
-
-						<div class="book_desc shadow">
-
-							<h3><a href="#">Quan Minimum</a></h3>
-							<p>Lorem ipsum consectetuer adipiscing </p>
-							<span>tu puntuacion: </span>
-							<span class="actual">*/10</span><br>
-
-							<ul class="buttons">
-								<li class="cart"><a href="#">Puntuar</a></li>
-								<li class="book_btn"><a href="#">continuar leyendo</a></li>
-								<div class="clear"> </div>
-							</ul>
-
-						</div>
-					</a>
-
-				</div>
-
-				<div class="col-md-3 book_box mb-3">
-
-					<a href="#">
-						<img src="{% static 'img/pic14.png' %}" class="img-fluid" alt=""/>
-						<span class="new-box">
-							<span class="new-label">Nuevo</span>
-						</span>
-						<span class="lectura-box">
-							<span class="lectura-label">Leyendo</span>
-						</span>
-
-						<div class="book_desc shadow">
-
-							<h3><a href="#">Carpe Diem</a></h3>
-							<p>Lorem ipsum consectetuer adipiscing </p>
-							<span>tu puntuacion: </span>
-							<span class="actual">7/10</span><br>
-
-							<ul class="buttons">
-								<li class="cart"><a href="#">Puntuar</a></li>
-								<li class="book_btn"><a href="#">Leer</a></li>
-								<div class="clear"> </div>
-							</ul>
-
-						</div>
-
-					</a>
-
-				</div>
-				
-				<div class="col-md-3 book_box mb-3">
-
-					<a href="#">
-						<img src="{% static 'img/pic15.png' %}" class="img-fluid" alt=""/>
-						<span class="new-box">
-							<span class="new-label">Nuevo</span>
-						</span>
-
-						<div class="book_desc shadow">
-
-							<h3><a href="#">Memento Mori</a></h3>
-							<p>Lorem ipsum consectetuer adipiscing </p>
-							<span>tu puntuacion: </span>
-							<span class="actual">*/10</span><br>
-
-							<ul class="buttons">
-								<li class="cart"><a href="#">Puntuar</a></li>
-								<li class="book_btn"><a href="#">continuar leyendo</a></li>
-								<div class="clear"> </div>
-							</ul>
-
-						</div>
-					</a>
-
-				</div>
-
-				<div class="col-md-3 book_box mb-3">
-
-					<a href="#">
-						<img src="{% static 'img/pic16.png' %}" class="img-fluid" alt=""/>
-						<span class="new-box">
-							<span class="new-label">Nuevo</span>
-						</span>
-
-						<div class="book_desc shadow">
-
-							<h3><a href="#">Quan Minimum</a></h3>
-							<p>Lorem ipsum consectetuer adipiscing </p>
-							<span>tu puntuacion: </span>
-							<span class="actual">*/10</span><br>
-
-							<ul class="buttons">
-								<li class="cart"><a href="#">Puntuar</a></li>
-								<li class="book_btn"><a href="#">continuar leyendo</a></li>
-								<div class="clear"> </div>
-							</ul>
-
-						</div>
-					</a>
-
-				</div>				
 
 			</div>
 		</div>

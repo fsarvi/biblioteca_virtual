@@ -1,0 +1,100 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+
+
+{% block content %}
+    
+
+    <div id="tf-header" class="bg-success">
+        <div class="container">
+            <h1>Sinopsis</h1>
+            <ol class="breadcrumb">
+                <li><a href="{% url 'index' %}">Home</a></li>
+                <li><a href="{% url 'sinopsis' %}">Sinopsis</a></li>
+            </ol>
+        </div>
+    </div>
+
+    <div id="tf-works" class="work-detail">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="">Detalles del libro: <span><strong>El Gato Negro y otros relatos</strong></span></h2>
+                <h5><em><blockquote>"Perturbadora, atrapante, magnifica"</blockquote> - El Canillita Times</em></h5>
+                <div class="separador"><span><img class="img-fluid" src="{% static 'img/sinopsis/sinopsis.png' %}" alt="..."></span></div>
+            </div>
+        </div>
+
+        <div id="tema-sinopsis">
+            <div class="container">
+
+                <div class="row"> 
+                    <div class="col-md-5 col-md-offset-1">
+
+                        <div class="works-block"> 
+                            <img src="{% static 'img/sinopsis/GATO.png' %}" class="img-fluid featured" alt="...">
+                        </div>
+
+                    </div> 
+
+                    <div class="col-md-6"> 
+                        <h5 class="media-heading"><strong>El gato negro y otros relatos es una recopilacion de los cuentos mas notables de Poe, en los que destaca <em> El gato negro, William Wilson y La carta robada</em></strong></h5>
+                        <hr>
+                        <dl class="m-3">
+                            <dt>Publicado:</dt>
+                            <dd>19 de agosto, 1843</dd>
+                            <dt>Autor:</dt>
+                            <dd>Edgar Allan Poe</dd>
+                            <dt>Genero:</dt>
+                            <dd>Horror / Psicologico / Policial</dd>
+                            <dt>Editorial:</dt>
+                            <dd>Letras de Sopa</dd>
+                        </dl>
+                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mb-5 sombra-lg">
+        <div class="row">
+            
+            <h1 class="display-6 text-center">Libros relacionados</h1>
+
+            {% for relacionado in relacionados %}
+            <a class="col-3 col-md-2" href="#">
+                <div class="sombra">
+                    <img class="img-fluid" src="{% static 'img/sinopsis/'|add:relacionado.1|add:'.jpg' %}" alt="">
+                    <h6 class="text-secondary">{{relacionado.0}}</h6>
+                </div>
+            </a>
+            {% endfor %}
+
+        </div>
+    </div>
+
+    <div class="container mb-5 sombra-lg rounded">
+        <div class="row">
+            <h1 class="display-6 text-center">Opiniones de los lectores</h1>
+            <div class="col-md-4 puntuacion sombra rounded">
+                <h1>Opinion media</h1>
+                <h2>puntaje: 4/5</h2>
+            </div>
+            <div class="col-md-6">
+                
+                {% for usuario in usuarios %}
+                <div class="m-5">
+                    <div class="row">
+                        <img class="col-2" src="{% static '/img/sinopsis/users.png' %}" alt="">
+                        <h5 class="col-10">{{usuario.0}}</h5>
+                    </div>
+                    <p><em>{{usuario.1}}</em></p>
+                    <span>puntuacion: {{usuario.2}}/5</span>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}
