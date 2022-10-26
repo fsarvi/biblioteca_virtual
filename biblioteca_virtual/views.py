@@ -62,3 +62,6 @@ def sinopsis(request, id):
     libros_y_usuarios = {"usuarios":lista_usuarios,"relacionados":lista_libros_relacionados, "libro_seleccionado": libro_seleccionado}
 ######################################################################################
     return render(request,'sinopsis.html',libros_y_usuarios)
+
+def equipo(request):
+    return render(request,'equipo.html',{})
