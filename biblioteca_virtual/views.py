@@ -1,5 +1,8 @@
 from django.shortcuts import render
 from numpy import true_divide
+from .forms import ContactoForm
+from django.contrib import messages
+
 
 
 def index(request):
@@ -88,3 +91,19 @@ def sinopsis(request, id):
 
 def equipo(request):
     return render(request, 'equipo.html', {})
+
+
+def contacto(request):
+    if request. method == "POST":
+        # Creo la instancia populada con los datos cargados en pantalla
+        contacto_form = ContactoForm(request. POST)
+        # Valido y proceso los datos.
+        if contacto_form.is_valid():
+            pass
+
+    else:
+        # Creo el formulario vacío con los valores por defecto
+        contacto_form = ContactoForm()
+
+    
+    return render(request, "contacto.html", {'contacto_form': contacto_form})

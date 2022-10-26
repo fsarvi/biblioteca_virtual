@@ -13,18 +13,14 @@
 }
 
 /* formato de todos los elementos para que no tengan atributos por default */
-h4,
-h5,
-h6,
-h1,
-h2,
-h3 {margin-top: 0;}
+* {
+	margin: 0;
+	padding: 0;
+}
 
-ul,
-ol {margin: 0;}
-
-p {margin: 0;}
-a {text-decoration: none;}
+a {
+	text-decoration: none;
+}
 
 html,body {
 	font-family: 'Open Sans', sans-serif;
@@ -426,3 +422,4 @@ li.youtube a span {
 .puntuacion{
 	height: fit-content;
 }
+/*--------------------- formulario contacto --------------------*/

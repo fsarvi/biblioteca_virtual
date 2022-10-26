@@ -1,0 +1,49 @@
+{% extends 'layouts/base.html' %}
+
+{% load static %}
+
+{% block content %}
+    <div id="tf-header" class="bg-success">
+        <div class="container">
+            <h1>Contacto</h1>
+            <ol class="breadcrumb">
+                <li><a href="{% url 'index' %}">Home</a></li>
+                <li>Contacto</li>
+            </ol>
+        </div>
+    </div>
+    <form novalidate id="contact-form" name="contact-form" action="{% url 'contacto' %}" method="POST">
+        {% csrf_token %}
+
+        {% comment %} {{ contacto_form }} {% endcomment %}
+
+        {% comment %} <table>
+            {{ contacto_form.as_table }}
+        </table> {% endcomment %}
+
+        {% comment %} <ul>
+            {{ contacto_form.as_ul }}
+        </ul> {% endcomment %}
+        {% comment %} {{ contacto_form.as_p }} {% endcomment %}
+        <div class="row mt-5">
+
+            {% for campo in contacto_form %}
+            
+                <div class="col-md-6 offset-md-3">
+
+                    <div class="md-form mb-1">
+                        <label for="">{{campo.label}}</label>
+                        {{campo}}
+                    </div>
+                    <div>{{campo.errors}}</div>
+                </div>
+
+            {% endfor %}
+
+        </div>
+        
+        <div class="text-center text-md-left mt-5">
+            <button class="btn btn-primary" type="submit">Enviar</button>
+        </div>
+    </form>
+{% endblock content %}
