@@ -12,38 +12,60 @@
             </ol>
         </div>
     </div>
-    <form novalidate id="contact-form" name="contact-form" action="{% url 'contacto' %}" method="POST">
+    <form novalidate class="container" id="contact-form" name="contact-form" action="{% url 'contacto' %}" method="POST">
         {% csrf_token %}
 
         {% comment %} {{ contacto_form }} {% endcomment %}
 
-        {% comment %} <table>
+        {% comment %} 
+        <table>
             {{ contacto_form.as_table }}
-        </table> {% endcomment %}
+        </table> 
+        {% endcomment %}
 
         {% comment %} <ul>
             {{ contacto_form.as_ul }}
-        </ul> {% endcomment %}
-        {% comment %} {{ contacto_form.as_p }} {% endcomment %}
-        <div class="row mt-5">
+        </ul> 
+        {% endcomment %}
 
+        {% comment %} {{ contacto_form.as_p }} {% endcomment %}
+
+        <div class="row mt-5 p-4 sombra-lg rounded">
+
+            <div class="text-center">
+                <img class="imagen-contacto" src="{% static 'img/contacto/contacto-logo.png' %}" alt="">
+                <h1 class="display-1"><strong> contact info</strong></h1>
+            </div>
+            
+
+
+            <div class="col-md-6 bg-side-contacto p-1">
+            </div>
+
+            <div class="col-md-6 rounded bg-translucido p-2">
+                <h2 class="display-6">Feedback</h2>
+                <p><strong>Address:</strong> estamos en todos lados!, somos un equipo mundial de lectores aportando una acopiosa cantidad de archivos</p>
+                <h2>¿Queres sumarte?</h2>
+                <p>Cualquier aporte, opinion y solicitud es bienvenida. <br> comunicate con nosotros y sumate a la comunidad lectomaniatica!</p>
             {% for campo in contacto_form %}
             
-                <div class="col-md-6 offset-md-3">
+                <!-- <div class="col-md-6 offset-md-3"> -->
 
                     <div class="md-form mb-1">
                         <label for="">{{campo.label}}</label>
                         {{campo}}
                     </div>
                     <div>{{campo.errors}}</div>
-                </div>
+
+                <!-- </div> -->
 
             {% endfor %}
+            </div>
 
+            <div class="text-center text-md-left mt-2 mb-5">
+                <button class="btn btn-primary" type="submit">Enviar</button>
+            </div>
         </div>
         
-        <div class="text-center text-md-left mt-5">
-            <button class="btn btn-primary" type="submit">Enviar</button>
-        </div>
     </form>
 {% endblock content %}
