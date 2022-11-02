@@ -1,0 +1,252 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+
+{% block content %}
+<div id="tf-header" class="bg-success">
+    <div class="container">
+        <h1>Reseñas</h1>
+        <ol class="breadcrumb">
+            <li><a href="{% url 'index' %}">Home</a></li>
+            <li>Reseñas</li>
+        </ol>
+    </div>
+</div>
+
+<main class="container pb-5">
+
+    <div class="row mb-5 sombra">
+        <div class="col-md-3 p-1 p-md-3 p-lg-3 sombra-lg">
+            <h1 class="display-6 text-success"><strong> Tendencia</strong></h1>
+            <h1 class="display-1 text-success"><strong> TOP 5!</strong></h1>
+        </div>
+
+        <div class="col-md-9">
+            <div class=" m-3 mt-md-5 posted sombra bg-translucido grid-principal">
+                <div class="grid-ppal-item grid-pi-1 p-1">
+                    <a href=""><h2>titulo del libro: titulo secundario del blog</h2></a>
+                </div>
+                <div class="grid-ppal-item grid-pi-2 rounded" style="background-image: linear-gradient(#0d3d0d8f,#457e458e),url('{%static "img/pic11.jpg" %}');">
+                    <img class="img-grid-ppal" src="{% static 'img/pic11.jpg' %}" alt="">
+                </div>
+                <div class="grid-ppal-item grid-pi-3 p-2">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum impedit nostrum dolor ab nulla consequatur aperiam accusamus vero nemo labore quo, adipisci ipsum corporis totam repellat placeat necessitatibus provident. Non.
+                </div>
+                <div class="grid-ppal-item ">
+                    <div class="iconos-posted">
+                        <a class="p-2" href="">
+                            <img src="{% static 'img/reseñas/hearth.png' %}" alt="">
+                            <h6 class="badge text-success">340</h6>
+                        </a>
+                        <a class="p-2" href="">
+                            <img src="{% static 'img/reseñas/comentario.png' %}" alt="">
+                            <h6 class="badge text-success">99</h6>
+                        </a>
+                        <!-- <a class="p-2" href=""><img src="{% static 'img/reseñas/share.png' %}" alt=""></a> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+    <div class="col-12 mb-5 grid-reseña">
+        <div class="reseña-box bg-translucido posted display-6">
+            <div class="rb-item rb-img">
+                <img src="{% static 'img/pic12.jpg' %}" alt="">
+            </div>
+            <div class="rb-item">
+                <a href=""><h4>reseña:titulo del libro</h4></a>
+            </div>
+            <div class="rb-item rb-iconos">
+                <a class="p-2" href="">
+                    <img src="{% static 'img/reseñas/hearth.png' %}" alt="">
+                    <h6 class="text-success">340</h6>
+                </a>
+                <a class="p-2" href="">
+                    <img src="{% static 'img/reseñas/comentario.png' %}" alt="">
+                    <h6 class="text-success">99</h6>
+                </a>
+            </div>
+        </div>
+
+        <div class="reseña-box bg-translucido posted display-6">
+            <div class="rb-item rb-img">
+                <img src="{% static 'img/pic13.jpg' %}" alt="">
+            </div>
+            <div class="rb-item">
+                <a href=""><h4>reseña:titulo del libro</h4></a>
+            </div>
+            <div class="rb-item rb-iconos">
+                <a class="p-2" href="">
+                    <img src="{% static 'img/reseñas/hearth.png' %}" alt="">
+                    <h6 class="text-success">340</h6>
+                </a>
+                <a class="p-2" href="">
+                    <img src="{% static 'img/reseñas/comentario.png' %}" alt="">
+                    <h6 class="text-success">99</h6>
+                </a>
+            </div>
+        </div>
+
+        <div class="reseña-box bg-translucido posted display-6">
+            <div class="rb-item rb-img">
+                <img src="{% static 'img/pic14.jpg' %}" alt="">
+            </div>
+            <div class="rb-item">
+                <a href=""><h4>reseña:titulo del libro</h4></a>
+            </div>
+            <div class="rb-item rb-iconos">
+                <a class="p-2" href="">
+                    <img src="{% static 'img/reseñas/hearth.png' %}" alt="">
+                    <h6 class="text-success">340</h6>
+                </a>
+                <a class="p-2" href="">
+                    <img src="{% static 'img/reseñas/comentario.png' %}" alt="">
+                    <h6 class="text-success">99</h6>
+                </a>
+            </div>
+        </div>
+
+        <div class="reseña-box bg-translucido posted display-6">
+            <div class="rb-item rb-img">
+                <img src="{% static 'img/pic15.jpg' %}" alt="">
+            </div>
+            <div class="rb-item">
+                <a href=""><h4>reseña:titulo del libro</h4></a>
+            </div>
+            <div class="rb-item rb-iconos">
+                <a class="p-2" href="">
+                    <img src="{% static 'img/reseñas/hearth.png' %}" alt="">
+                    <h6 class="text-success">340</h6>
+                </a>
+                <a class="p-2" href="">
+                    <img src="{% static 'img/reseñas/comentario.png' %}" alt="">
+                    <h6 class="text-success">99</h6>
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="row sombra mb-5">
+        <div class="col-md-3 p-1 p-md-3 p-lg-5 sombra-lg">
+            <h1 class="display-6 text-success"> <strong> Ultimos publicados</strong></h1>
+        </div>
+
+        
+
+        <div class="col-md-9">
+            <div class=" m-3 mt-md-5 posted sombra bg-translucido grid-principal">
+                <div class="grid-ppal-item grid-pi-1 p-1">
+                    <a href=""><h2>El intercambio: una obra inquietante</h2></a>
+                </div>
+                <div class="grid-ppal-item grid-pi-2 rounded" style="background-image: linear-gradient(#0d3d0d8f,#457e458e),url('{%static "img/pic11.jpg" %}');">
+                    <img class="img-grid-ppal" src="{% static 'img/pic11.jpg' %}" alt="">
+                </div>
+                <div class="grid-ppal-item grid-pi-3 p-2">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum impedit nostrum dolor ab nulla consequatur aperiam accusamus vero nemo labore quo, adipisci ipsum corporis totam repellat placeat necessitatibus provident. Non.
+                </div>
+                <div class="grid-ppal-item ">
+                    <div class="iconos-posted">
+                        <a class="p-2" href="">
+                            <img src="{% static 'img/reseñas/hearth.png' %}" alt="">
+                            <h6 class="badge text-success">12</h6>
+                        </a>
+                        <a class="p-2" href="">
+                            <img src="{% static 'img/reseñas/comentario.png' %}" alt="">
+                            <h6 class="badge text-success">3</h6>
+                        </a>
+                        <!-- <a class="p-2" href=""><img src="{% static 'img/reseñas/share.png' %}" alt=""></a> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+          
+        
+    </div>
+
+    <div class="col-12 mb-5 grid-reseña">
+        <div class="reseña-box bg-translucido posted display-6">
+            <div class="rb-item rb-img">
+                <img src="{% static 'img/sinopsis/reinasabismo.jpg' %}" alt="">
+            </div>
+            <div class="rb-item">
+                <a href=""><h4>Reinas del abismo</h4></a>
+            </div>
+            <div class="rb-item rb-iconos">
+                <a class="p-2" href="">
+                    <img src="{% static 'img/reseñas/hearth.png' %}" alt="">
+                    <h6 class="text-success">340</h6>
+                </a>
+                <a class="p-2" href="">
+                    <img src="{% static 'img/reseñas/comentario.png' %}" alt="">
+                    <h6 class="text-success">99</h6>
+                </a>
+            </div>
+        </div>
+
+        <div class="reseña-box bg-translucido posted display-6">
+            <div class="rb-item rb-img">
+                <img src="{% static 'img/sinopsis/kaiki.jpg' %}" alt="">
+            </div>
+            <div class="rb-item">
+                <a href=""><h4>kaiki</h4></a>
+            </div>
+            <div class="rb-item rb-iconos">
+                <a class="p-2" href="">
+                    <img src="{% static 'img/reseñas/hearth.png' %}" alt="">
+                    <h6 class="text-success">340</h6>
+                </a>
+                <a class="p-2" href="">
+                    <img src="{% static 'img/reseñas/comentario.png' %}" alt="">
+                    <h6 class="text-success">99</h6>
+                </a>
+            </div>
+        </div>
+
+        <div class="reseña-box bg-translucido posted display-6">
+            <div class="rb-item rb-img">
+                <img src="{% static 'img/sinopsis/buenhijo.jpg' %}" alt="">
+            </div>
+            <div class="rb-item">
+                <a href=""><h4>El buen hijo</h4></a>
+            </div>
+            <div class="rb-item rb-iconos">
+                <a class="p-2" href="">
+                    <img src="{% static 'img/reseñas/hearth.png' %}" alt="">
+                    <h6 class="text-success">340</h6>
+                </a>
+                <a class="p-2" href="">
+                    <img src="{% static 'img/reseñas/comentario.png' %}" alt="">
+                    <h6 class="text-success">99</h6>
+                </a>
+            </div>
+        </div>
+
+        <div class="reseña-box bg-translucido posted display-6">
+            <div class="rb-item rb-img">
+                <img src="{% static 'img/sinopsis/malossueños.jpg' %}" alt="">
+            </div>
+            <div class="rb-item">
+                <a href=""><h4>El bazar de los malos sueños</h4></a>
+            </div>
+            <div class="rb-item rb-iconos">
+                <a class="p-2" href="">
+                    <img src="{% static 'img/reseñas/hearth.png' %}" alt="">
+                    <h6 class="text-success">340</h6>
+                </a>
+                <a class="p-2" href="">
+                    <img src="{% static 'img/reseñas/comentario.png' %}" alt="">
+                    <h6 class="text-success">99</h6>
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+</main>
+
+
+
+{% endblock content %}
