@@ -107,3 +107,7 @@ def contacto(request):
 
     
     return render(request, "contacto.html", {'contacto_form': contacto_form})
+
+
+def resenias(request):
+    return render(request,"reseñas.html")
