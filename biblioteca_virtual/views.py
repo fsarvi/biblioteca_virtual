@@ -20,95 +20,21 @@ def ver_tabla_libros(request):
 
 def index(request):
 
-    mi_lista = Lista_libros.objects.all().values()
-    lista_libros = []
-    
-    for x in mi_lista:  
-        lista_libros.append(
-            [ 
-            x['libro_titulo']  ,
-            x['libro_descripcion_breve']  ,
-            x['libro_imagen']  ,
-            x['libro_nuevo']  ,    
-            x['libro_leyendo']  ,
-            x['libro_numero_id']  ,      
-            x['libro_sinopsis_breve']  ,    
-            x['libro_fecha_publicacion']  ,    
-            x['libro_autor']   ,
-            x['libro_genero']  ,    
-            x['libro_formato'] ,  
-            x['libro_critica_breve'] ,    
-            x['libro_critica_fuente'] 
-            ]
-        )
-            
-
-
-    libros = {"titulos": lista_libros}
+    libros = Lista_libros.objects.all().values()    
+    libros = {"libros": libros}
 
     return render(request, 'index.html', libros)
 
 
 def sinopsis(request, id):
     
-    
-    mi_lista = Lista_libros.objects.all().values()
-    libros = []
-    
-    for x in mi_lista:  
-        libros.append(
-            [ 
-            x['libro_titulo']  ,
-            x['libro_descripcion_breve']  ,
-            x['libro_imagen']  ,
-            x['libro_nuevo']  ,    
-            x['libro_leyendo']  ,
-            x['libro_numero_id']  ,      
-            x['libro_sinopsis_breve']  ,    
-            x['libro_fecha_publicacion']  ,    
-            x['libro_autor']   ,
-            x['libro_genero']  ,    
-            x['libro_formato'] ,  
-            x['libro_critica_breve'] ,    
-            x['libro_critica_fuente'] 
-            ]
-        )
-            
-
-
-    libro_seleccionado = libros[id - 1]
-
+    libros_relacionados = Lista_libros_relacionados.objects.all().values()
+    usuarios = Lista_usuarios.objects.all().values()
+    libro_seleccionado = Lista_libros.objects.get(id=id)
     
 
-    mi_lista = Lista_libros_relacionados.objects.all().values()
-    lista_libros_relacionados = []
-    
-    for x in mi_lista:  
-        lista_libros_relacionados.append(
-            [ 
-            x['libro_relacionado_titulo']  ,
-            x['libro_relacionado_imagen']  
-            ]
-        )
-
-
-    
-
-    mi_lista = Lista_usuarios.objects.all().values()
-    lista_usuarios = []
-    
-    for x in mi_lista:  
-        lista_usuarios.append(
-            [ 
-            x['usuario_nombre']  ,
-            x['usuario_critica_libro'] , 
-            x['usuario_puntuacion_libro']  
-            ]
-        )
-
-
-    libros_y_usuarios = {"usuarios": lista_usuarios,
-                         "relacionados": lista_libros_relacionados, "libro_seleccionado": libro_seleccionado}
+    libros_y_usuarios = {"usuarios": usuarios,
+                          "relacionados": libros_relacionados, "libro_seleccionado": libro_seleccionado}
 
     return render(request, 'sinopsis.html', libros_y_usuarios)
 

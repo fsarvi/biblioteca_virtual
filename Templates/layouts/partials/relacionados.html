@@ -7,8 +7,8 @@
         {% for relacionado in relacionados %}
         <a class="col-3 col-md-2" href="#">
             <div class="sombra">
-                <img class="img-fluid" src="{% static 'img/sinopsis/'|add:relacionado.1|add:'.jpg' %}" alt="">
-                <h6 class="text-secondary">{{relacionado.0}}</h6>
+                <img class="img-fluid" src="{% static 'img/sinopsis/'|add:relacionado.libro_relacionado_imagen|add:'.jpg' %}" alt="">
+                <h6 class="text-secondary">{{relacionado.libro_relacionado_titulo}}</h6>
             </div>
         </a>
         {% endfor %}

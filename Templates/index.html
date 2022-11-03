@@ -14,24 +14,25 @@
 
 				<h1 class="display-1"> Bienvenido</h1>
 				<h2 class="display-6 text-secondary">Libros por orden de puntuacion</h2>
-				{% for titulo in titulos %}
+
+				{% for libro in libros %}
 
 					<div class="col-md-3 book_box mb-3">
 							
-						<a href=" {% url 'sinopsis' id=titulo.5 %} ">
+						<a href=" {% url 'sinopsis' id=libro.id %} ">
 						{% comment "" %}
 							|add:imagen|add: YA CUMPLE COMO FILTRO EN LA TEMPLATE
 						{% endcomment %}
-							<img src="{% static 'img/'|add:titulo.2|add:'.jpg' %}" class="img-fluid" alt=""/>
+							<img src="{% static 'img/'|add:libro.libro_imagen|add:'.jpg' %}" class="img-fluid" alt=""/>
 
 							
-							{% if titulo.3 %}
+							{% if libro.libro_nuevo %}
 							<span class="new-box">
 								<span class="new-label">Nuevo</span>
 							</span>
 							{% endif %}
 
-							{% if titulo.4 %}
+							{% if libro.libro_leyendo %}
 							<span class="lectura-box">
 								<span class="lectura-label">Leyendo</span>
 							</span>
@@ -39,13 +40,13 @@
 								
 							<div class="book_desc shadow">
 								
-								<h3><a href="{% url 'sinopsis' id=titulo.5 %}">{{ titulo.0 }}</a></h3>
-								<p>{{ titulo.1 }}</p>
+								<h3><a href="{% url 'sinopsis' id=libro.id %}">{{ libro.libro_titulo }}</a></h3>
+								<p>{{ libro.libro_descripcion_breve }}</p>
 								<span>Puntuacion: </span>
 								<span class="actual">6/10</span><br>
 
 								<ul class="buttons">
-									<li class="cart"><a href="{% url 'sinopsis' id=titulo.5 %}">Puntuar</a></li>
+									<li class="cart"><a href="{% url 'sinopsis' id=libro.id %}">Puntuar</a></li>
 									<li class="book_btn"><a href="#">Leer</a></li>
 									
 									<div class="clear"></div>
