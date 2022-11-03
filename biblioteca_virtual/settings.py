@@ -25,6 +25,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'biblioteca_virtual'
 ]
 
 MIDDLEWARE = [
@@ -63,8 +64,12 @@ WSGI_APPLICATION = 'biblioteca_virtual.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'biblioteca_virtual',
+        'USER': 'postgres',
+        'PASSWORD': 'Sheila852',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
 

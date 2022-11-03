@@ -7,5 +7,14 @@ urlpatterns = [
     path('', views.index, name= 'index'),
     path('sinopsis/<int:id>/',views.sinopsis, name= 'sinopsis'),
     path('nuestro-equipo/',views.equipo, name= 'equipo'),
-    path('contacto/',views.contacto, name= 'contacto')
+    path('contacto/',views.contacto, name= 'contacto'),
+    # URLs solo para cargar en la base de datos los valores de muestra de Matias
+    path('llenar_recomendaciones_1/', views.llenar_recomendaciones_1, name='llenar_recomendaciones_1'),
+    path('llenar_recomendaciones_1/llenar_recomendaciones/', views.llenar_recomendaciones, name='llenar_recomendaciones'),
+    path('llenar_libros_1/', views.llenar_libros_1, name='llenar_libros_1'),
+    path('llenar_libros_1/llenar_libros/', views.llenar_libros, name='llenar_libros'),
+    path('llenar_relacionados_1/', views.llenar_relacionados_1, name='llenar_relacionados_1'),
+    path('llenar_relacionados_1/llenar_relacionados/', views.llenar_relacionados, name='llenar_relacionados'),
+    # fin URLs solo para cargar en la base de datos los valores de muestra de Matias
+    path('ver_tabla_libros', views.ver_tabla_libros, name= 'ver_tabla_libros'),
 ]
