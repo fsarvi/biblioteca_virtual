@@ -28,7 +28,6 @@ def index(request):
 def buscar(request):
     
     busqueda= request.GET['busqueda']
-    print(busqueda)
 
     if request.GET['categoria']:
 
