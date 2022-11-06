@@ -3,7 +3,7 @@ from numpy import true_divide
 from .forms import ContactoForm
 from django.contrib import messages
 
-from django.http import HttpResponse, HttpResponseRedirect
+from django.http import HttpResponse, HttpResponseRedirect, HttpRequest
 from django.template import loader
 from django.urls import reverse
 from datetime import datetime
@@ -24,6 +24,14 @@ def index(request):
     libros = {"libros": libros}
 
     return render(request, 'index.html', libros)
+
+def buscar(request):
+   
+    busqueda= request.GET['busqueda']
+    buscador = Lista_libros.objects.filter(libro_titulo__icontains=busqueda)
+    libros = {"libros": buscador}
+
+    return render(request, 'busqueda.html', libros)
 
 
 def sinopsis(request, id):

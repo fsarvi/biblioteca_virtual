@@ -1,0 +1,19 @@
+{% load static %}
+    <form action="/buscar" method="get">
+        {% csrf_token %}
+        <input type="text" id="busqueda" name="busqueda" required
+        minlength="2" maxlength="40" size="20">
+
+        <select name="categorias" id="categorias">
+            <option value="titulo">Título</option>
+            <option value="autor">Autor</option>
+        </select>
+        <select name="generos" id="generos">
+            <option value="" selected disabled hidden>Genéro</option>
+            <option value="ficcion">Ficción</option>
+            <option value="novela">Novela</option>
+            <option value="ficcion">Comedia</option>
+            <option value="romantico">Romántico</option>
+        </select>
+        <input type="submit" value="Buscar"/>
+    </form>
