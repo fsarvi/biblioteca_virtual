@@ -1,0 +1,5 @@
+# ignorar elementos de __pycache
+__pycache__/
+
+# habria que agregar mas elemenotos a la lista
+# ver https://www.toptal.com/developers/gitignore/api/python

@@ -1,0 +1,12 @@
+
+
+{{ mi_tabla_libros }}
+
+<table border="1">
+    {% for x in mi_tabla_libros  %}
+    <tr>
+    <td>{{ x.id }}</a></td>
+    <td>{{ x.libro_titulo }}</td>
+    <td>{{ x.libro_imagen }}</td>
+    {% endfor %}
+    </table>
