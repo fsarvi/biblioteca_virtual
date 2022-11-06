@@ -26,9 +26,21 @@ def index(request):
     return render(request, 'index.html', libros)
 
 def buscar(request):
-   
+    
     busqueda= request.GET['busqueda']
-    buscador = Lista_libros.objects.filter(libro_titulo__icontains=busqueda)
+
+    if request.GET['categoria']:
+
+        categoria= request.GET['categoria']
+
+        if categoria == "titulo":
+            buscador = Lista_libros.objects.filter(libro_titulo__icontains=busqueda)
+        else:
+            buscador = Lista_libros.objects.filter(libro_autor__icontains=busqueda)    
+
+    elif request.GET['genero']:
+        buscador = Lista_libros.objects.filter(libro_genero__icontains=busqueda)
+
     libros = {"libros": buscador}
 
     return render(request, 'busqueda.html', libros)
