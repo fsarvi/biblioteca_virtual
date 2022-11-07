@@ -25,6 +25,13 @@ def index(request):
 
     return render(request, 'index.html', libros)
 
+def resenias(request):
+
+    libros = Lista_libros.objects.all().values()    
+    libros = {"libros": libros}
+
+    return render(request, 'reseñas.html', libros)
+
 def buscar(request):
     
     busqueda= request.GET['busqueda']
