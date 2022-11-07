@@ -16,40 +16,60 @@
     <div id="tf-works" class="work-detail">
         <div class="container">
             <div class="section-header">
-                <h2 class=""><span><strong>Grupo 7</strong></span></h2>
+                <h2 class=><span><strong>Grupo 7 Comisión 228020</strong></span></h2>
                 <hr>
-                <h5><em>BIBLIOTECA VIRTUAL</em></h5>
-            </div>
-        </div>
-
-        <div id="tema-sinopsis">
-            <div class="container">
-
-                <div class="row"> 
-                    <div class="col-md-6 col-md-offset-1">
-
-                        <div class="works-block"> 
-                            <img src="{% static 'img/equipo.jpg' %}" class="img-fluid featured" alt="...">
-                        </div>
-
-                    </div> 
-
-                    <div class="col-md-6"> 
-                        <h5 class="media-heading"><strong><em> Integrantes: </em></strong></h5>
-                        
+                <div class="descripcion_tp">
+                    <h5 id= "title_biblioteca" class="display-6 text-secondary"><em>BIBLIOTECA VIRTUAL</em></h5>
+                    <h6>La Biblioteca Virtual es un proyecto grupal creado con el Framework Django, además de otras tecnologías.</h6>
+                    <h6>El proyecto busca cumplir con los siguientes objetivos:</h6>
                         <ul class="m-3">
-                            <li>Fernando Matuk</li>
-                            <li>Matias Barrios</li>
-                            <li>Edy</li>
-                            <li>Fátima Sarvi</li>
-                            <li>María Páez</li>
+                            <li>Alta, baja y modificación de libros (con autenticación de por medio).</li>
+                            <li>Búsqueda, visualización de libros y reseñas, comentar sobre libros puntuales.</li>
+                            <li>Libros categorizados a través de etiquetas para poder ubicar libros por género o autor.</li>
                         </ul>
-                        
-                    </div>
-                    
+                    </h4>
                 </div>
             </div>
         </div>
-    </div>
 
+        <div id="integrantes">
+            <h5><strong><em>Integrantes: </em></strong></h5>                        
+                <div class="tarjetas">
+                    <ul>
+                        <li><img class="imagen_equipo" src= "{% static 'img/sdamatuk.png' %}"></li>
+                    <div class="persona">
+                        <li>Fernando Matuk</li>
+                        <li><a href="https://github.com/sdamatuk">Github</a></li>
+                    </div>
+                    </ul>
+                    <ul>
+                        <li><img class="imagen_equipo" src= "{% static 'img/matiasbarriosled.jpg' %}"></li>
+                    <div class="persona">
+                        <li>Matias Barrios</li>
+                        <li><a href="https://github.com/matiasbarriosled">Github</a></li>
+                    </div>
+                    </ul>
+                    <ul>
+                        <li><img class="imagen_equipo" src= "{% static 'img/edybarbe.jpg' %}"></li>
+                    <div class="persona">
+                        <li>Edy</li>
+                        <li><a href="https://github.com/edybarbe">Github</a></li>
+                    </div>
+                    </ul>
+                    <ul>
+                        <li><img class="imagen_equipo" src= "{% static 'img/fsarvi.jpg' %}"></li>
+                    <div class="persona">
+                        <li>Fátima Sarvi</li>
+                        <li><a href="https://github.com/fsarvi">Github</a></li>
+                    </div>
+                    </ul>
+                    <ul>
+                        <li><img class="imagen_equipo" src= "{% static 'img/mardigan123.jpg' %}"></li>
+                    <div class="persona">    
+                        <li>María Páez</li>
+                        <li><a href="https://github.com/Mardigan123">Github</a></li>
+                    </div>
+                    </ul>
+                </div>           
+        </div>
 {% endblock content %}

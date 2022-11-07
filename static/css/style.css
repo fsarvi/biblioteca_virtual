@@ -39,9 +39,6 @@ html,body {
 .bg-translucido{
 	background-color: rgba(86, 255, 170, 0.322);
 }
-
-
-
 /* -------------------------------------------------MENU ---------- NAV-BAR ---------------------------------------------------------------- */
 .header {
 	background: var(--color-principal);
@@ -438,4 +435,52 @@ li.youtube a span {
 
 .imagen-contacto{
 	width: 10vh;
+}
+
+/*######################################################...EQUIPO.HTML...######################################################*/
+
+
+.tarjetas{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	text-align: center;
+}
+
+.section-header li{
+	list-style: none;
+}
+
+.tarjetas li{
+	list-style: none;
+}
+.persona {
+	background-color: #37963f;
+	background-size: auto;
+	border-radius: 36px;
+	padding: 2%;
+	font-weight: bold;
+}
+.persona a{
+	color: #85e9f0;
+	font-weight: normal;
+
+}
+.persona a:hover{
+	color: #ffffff;
+}
+
+ul .imagen_equipo{
+	width: 50%;
+	border-radius: 4px;
+
+}
+
+#integrantes h5{
+	text-align: center;
+	padding:1%;
+}
+
+#title_biblioteca{
+	padding:2%;
 }
