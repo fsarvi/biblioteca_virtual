@@ -32,25 +32,25 @@ def resenias(request):
     libros = {"libros": libros}
     return render(request, 'reseñas.html', libros)
 
-# def buscar(request):
+def buscar(request):
     
-#     busqueda= request.GET['busqueda']
+    busqueda= request.GET['busqueda']
 
-#     if request.GET['categoria']:
+    if request.GET['categoria']:
 
-#         categoria= request.GET['categoria']
+        categoria= request.GET['categoria']
 
-#         if categoria == "titulo":
-#             buscador = Libro.objects.filter(libro_titulo__icontains=busqueda)
-#         elif categoria == "autor":
-#             buscador = Libro.objects.filter(libro_autor__icontains=busqueda)
-#         else:   
-#             buscador = Libro.objects.filter(libro_genero__icontains=busqueda)
+        if categoria == "titulo":
+            buscador = Libro.objects.filter(titulo__icontains=busqueda)
+        elif categoria == "autor":
+            buscador = Libro.objects.filter(autor__icontains=busqueda)
+        else:   
+            buscador = Libro.objects.filter(genero__icontains=busqueda)
 
 
-#     libros = {"libros": buscador}
+    libros = {"libros": buscador}
 
-#     return render(request, 'busqueda.html', libros)
+    return render(request, 'busqueda.html', libros)
 
 
 def sinopsis(request, id):

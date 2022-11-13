@@ -6,7 +6,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name= 'index'),
     path('sinopsis/<int:id>/',views.sinopsis, name= 'sinopsis'),
-    # path('buscar/',views.buscar, name= 'busqueda'),
+    path('buscar/',views.buscar, name= 'busqueda'),
     path('nuestro-equipo/',views.equipo, name= 'equipo'),
     path('contacto/',views.contacto, name= 'contacto'),
     path('reseñas/',views.resenias, name='reseñas'),
