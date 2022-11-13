@@ -58,8 +58,9 @@ def sinopsis(request, id):
     libros_relacionados = Libro.objects.all().values() #cambiar por relacionados por género
      
     libro_seleccionado = Libro.objects.get(id=id)
-    comentarios = Comentario.objects.get(libro_id=id)
+    comentarios = Comentario.objects.filter(libro_id=id)
     generos = libro_seleccionado.genero.all()
+    
     libros_y_usuarios = {"comentarios": comentarios,
                            "relacionados": libros_relacionados, "libro_seleccionado": libro_seleccionado, "generos": generos}
 
