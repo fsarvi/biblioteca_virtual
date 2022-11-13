@@ -23,16 +23,16 @@
 						{% comment "" %}
 							|add:imagen|add: YA CUMPLE COMO FILTRO EN LA TEMPLATE
 						{% endcomment %}
-							<img src="{% static 'img/'|add:libro.libro_imagen|add:'.jpg' %}" class="img-fluid" alt=""/>
+							<img src="{% static 'img/'|add:libro.imagen|add:'.jpg' %}" class="img-fluid" alt=""/>
 
 							
-							{% if libro.libro_nuevo %}
+							{% if libro.nuevo %}
 							<span class="new-box">
 								<span class="new-label">Nuevo</span>
 							</span>
 							{% endif %}
 
-							{% if libro.libro_leyendo %}
+							{% if libro.leyendo %}
 							<span class="lectura-box">
 								<span class="lectura-label">Leyendo</span>
 							</span>
@@ -40,8 +40,8 @@
 								
 							<div class="book_desc shadow">
 								
-								<h3><a href="{% url 'sinopsis' id=libro.id %}">{{ libro.libro_titulo }}</a></h3>
-								<p>{{ libro.libro_descripcion_breve }}</p>
+								<h3><a href="{% url 'sinopsis' id=libro.id %}">{{ libro.titulo }}</a></h3>
+								<p>{{ libro.descripcion }}</p>
 								<span>Puntuacion: </span>
 								<span class="actual">6/10</span><br>
 

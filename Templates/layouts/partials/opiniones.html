@@ -8,14 +8,14 @@
         </div>
         <div class="col-md-6">
             
-            {% for usuario in usuarios %}
+            {% for comentario in comentarios %}
                 <div class="container mb-5 sombra-lg rounded bg-translucido">
                     <div class="row">
                         <img class="col-2" src="{% static '/img/sinopsis/users.png' %}" alt="">
-                        <h5 class="col-10">{{usuario.usuario_nombre}}</h5>
+                        <h5 class="col-10">{{comentario.usuario.persona.nombre}} {{comentario.usuario.persona.apellido}}</h5>
                     </div>
-                    <p><em>{{usuario.usuario_critica_libro}}</em></p>
-                    <span>puntuacion: {{usuario.usuario_puntuacion_libro}}/5</span>
+                    <p><em>{{comentario.comentario}}</em></p>
+                    <span>puntuacion: {{comentario.puntuacion}}/5</span>
                 </div>
             {% endfor %}
         </div>
