@@ -1,13 +1,20 @@
 {% load static %}
     <form action="/buscar" method="get">
         {% csrf_token %}
-        <input type="text" id="busqueda" name="busqueda" required
+        <input type="text" id="busqueda" name="busqueda" 
         minlength="2" maxlength="40" size="20">
 
         <select name="categoria" id="categoria">
             <option value="titulo">Título</option>
             <option value="autor">Autor</option>
             <option value="genero">Genéro</option>
+        </select>
+        <select name="genero" id="genero">
+            <option selected="true" disabled="disabled">Género</option>    
+            {% for genero in generos %}
+            <option value={{genero.nombre}}>{{genero.nombre}}</option>
+                    {{genero.nombre}}
+            {% endfor %}
         </select>
         <input type="submit" value="Buscar"/>
     </form>

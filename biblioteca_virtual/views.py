@@ -20,7 +20,8 @@ from .models import Persona, Autor, Usuario, Editorial, Genero, Critica, Estado,
 
 def index(request):
     libros = Libro.objects.all().values()
-    libros = {"libros": libros}
+    generos = Genero.objects.all().values()
+    libros = {"libros": libros, "generos": generos}
 
     return render(request, 'index.html', libros)
 
