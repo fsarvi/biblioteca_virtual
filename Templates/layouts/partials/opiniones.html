@@ -12,10 +12,10 @@
                 <div class="container mb-5 sombra-lg rounded bg-translucido">
                     <div class="row">
                         <img class="col-2" src="{% static '/img/sinopsis/users.png' %}" alt="">
-                        <h5 class="col-10">{{usuario.usuario_nombre}}</h5>
+                        <h5 class="col-10">{{usuario.nombre}}</h5>
                     </div>
-                    <p><em>{{usuario.usuario_critica_libro}}</em></p>
-                    <span>puntuacion: {{usuario.usuario_puntuacion_libro}}/5</span>
+                    <p><em>{{usuario.critica}}</em></p>
+                    <span>puntuacion: {{usuario.puntuacion}}/5</span>
                 </div>
             {% endfor %}
         </div>
