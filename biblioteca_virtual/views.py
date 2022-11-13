@@ -34,23 +34,33 @@ def resenias(request):
     return render(request, 'reseñas.html', libros)
 
 def buscar(request):
-    
-    busqueda= request.GET['busqueda']
 
-    if request.GET['categoria']:
+    if  request.GET['busqueda']: 
 
-        categoria= request.GET['categoria']
+        busqueda = request.GET['busqueda']
+        categoria = request.GET['categoria']
 
         if categoria == "titulo":
             buscador = Libro.objects.filter(titulo__icontains=busqueda)
         elif categoria == "autor":
             buscador = Libro.objects.filter(autor__icontains=busqueda)
-        else:   
-            buscador = Libro.objects.filter(genero__icontains=busqueda)
+            
+        libros = {"libros": buscador}
 
+    else:
 
-    libros = {"libros": buscador}
+        if request.GET['genero']:
+            genero = request.GET['genero']
+            buscador = Libro.objects.filter(genero__nombre__icontains=genero)
 
+            libros = {"libros": buscador}
+        
+        else:
+            messages.error(request, 'El buscador sólo puede ir vacío si selecciona un género')
+            libros = {"libros": Libro.objects.all().values()}
+            return render(request, 'index.html', libros)
+            
+    
     return render(request, 'busqueda.html', libros)
 
 

@@ -16,7 +16,7 @@ class Editorial(models.Model):
     nombre = models.CharField(max_length=120, blank=False, null=False)
 
 class Genero(models.Model):
-    nombre = models.CharField(max_length=15, blank=False, null=False)
+    nombre = models.CharField(max_length=30, blank=False, null=False)
 
 class Critica(models.Model):
     critica = models.CharField(max_length=254, blank=False, null=False)
