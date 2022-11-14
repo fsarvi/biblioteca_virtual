@@ -31,6 +31,9 @@ def resenias(request):
     libros = {"libros": libros}
 
     return render(request, 'reseñas.html', libros) 
+
+def entrada_resenia(request):
+    return render(request, "entradareseña.html")
        
 def equipo(request):
     return render(request, 'equipo.html', {})
