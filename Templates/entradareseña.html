@@ -1,0 +1,73 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+<div id="tf-header" class="bg-success">
+    <div class="container">
+        <h1>Reseñas</h1>
+        <ol class="breadcrumb">
+            <li><a href="{% url 'index' %}">Home</a></li>
+            <li><a href="{% url 'reseñas' %}"> Reseñas</a></li>
+            <li>titulo del libro</li>
+        </ol>
+    </div>
+</div>
+
+<main>
+
+    <div class="container">
+        <div class="row mt-5 shadow-lg d-flex flex-wrap-reverse ">
+            <div class="col-md-8">
+                <img class="img-fluid rounded" src="{% static '/img/entradareseña/DorianGray.png' %}" alt="">
+                <h1 class="display-6 text-success p-5">Una mirada al Retrato de Dorian Gray</h1>
+                <h6 class="ps-5 pb-5">publicado el dia 14/11/2022</h6>
+                <p class="p-md-5 p-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat eligendi consectetur quia quas beatae reprehenderit quae laboriosam? Dolor totam natus quod eum aperiam et nostrum dolorem omnis, dignissimos ut, corporis sint culpa! Obcaecati nostrum praesentium temporibus itaque officia perspiciatis assumenda facilis enim repellat, omnis 
+                    quisquam aperiam quo nesciunt fuga recusandae dicta quod sit quis. Facilis repudiandae laborum suscipit adipisci asperiores error voluptate. Praesentium culpa omnis cupiditate voluptatibus laudantium consequuntur vitae rem sequi. Obcaecati iure, pariatur et nobis necessitatibus quo! Nesciunt hic, doloremque ratione mollitia expedita incidunt 
+                    los personajes veritatis, cum rem quo architecto illum nobis modi. Cumque aspernatur eos sapiente eligendi explicabo ullam in unde illo atque deleniti blanditiis reiciendis sint delectus 
+                    molestias, perspiciatis, officiis sit necessitatibus rem, quasi suscipit reprehenderit aperiam placeat recusandae commodi. Sunt commodi veniam, quasi incidunt maxime unde 
+                    el argumento es ipsa, nihil accusamus quas aliquam ut molestias alias? Optio sapiente necessitatibus sint voluptate non modi, magni ratione sed veniam asperiores, aspernatur voluptates amet magnam, placeat corrupti? Asperiores, neque incidunt nam id nulla quis corporis, delectus facilis suscipit ipsa nisi quod ullam, quisquam reprehenderit! Excepturi possimus 
+                    temporibus, est quia soluta rerum enim, consequatur nihil ad, accusantium doloremque et explicabo? Fuga eligendi, iusto est hic non aliquid voluptatum illum accusamus? Enim reprehenderit eum, necessitatibus expedita quis impedit amet quae nobis a esse nulla iste mollitia veritatis aperiam sunt numquam ipsam quasi obcaecati animi magnam rem? 
+                    los puntos positivos del libro son Delectus non ipsam consequuntur maiores itaque voluptatum. Commodi libero, doloremque repudiandae perferendis in deleniti modi fugit neque illum, nihil soluta nulla voluptatum 
+                    dolorum harum sit vitae, maiores accusamus! Perspiciatis fugit voluptatem earum, amet voluptates beatae at inventore neque, odio, aliquid omnis. Corrupti repellendus unde officiis! Beatae at sint quos repudiandae ipsam atque harum molestiae fuga quo explicabo optio, voluptatum adipisci, odio esse reprehenderit sit dolorem natus, velit veniam a? Similique at rerum recusandae expedita nihil ea officia id fugit, vitae aliquid fugiat culpa facilis! Ab modi incidunt, veritatis expedita eligendi, tempore voluptatum odit, 
+                    aspernatur soluta voluptate quo nulla odio? Iure atque sed porro doloremque a voluptates suscipit consequatur, vitae, tenetur consequuntur totam ex voluptatibus. Assumenda 
+                    las cosas que me molestaron son omnis fugiat odit corrupti, totam autem, ab adipisci facilis deserunt sed hic maxime quisquam laudantium beatae, inventore consectetur voluptas! Molestiae, quam? Omnis numquam doloribus nulla neque sequi, quo atque qui iusto similique blanditiis fugit consequuntur quas aliquam quibusdam harum voluptatibus eveniet quaerat odio cum. Quos cupiditate 
+                    quaerat iusto, illo soluta necessitatibus corrupti esse, modi nihil deleniti earum eligendi tenetur possimus quidem vitae?</p>
+                    <div class="rb-item rb-iconos">
+                        <a class="p-2" href="">
+                            <img src="{% static 'img/reseñas/hearth.png' %}" alt="">
+                            <h6 class="text-success">340</h6>
+                        </a>
+                        <a class="p-2" href="">
+                            <img src="{% static 'img/reseñas/comentario.png' %}" alt="">
+                            <h6 class="text-success">99</h6>
+                        </a>
+                    </div>
+
+                    {% include 'layouts/partials/opiniones.html' %}
+            </div>
+            <div class="col-md-4 p-md-5 text-center">
+                <h5>Ficha técnica</h5>
+                <dl class="m-3 p-md-3">
+                    <dt>Publicado:</dt>
+                    <dd>01/04/1981</dd>
+                    <hr>
+                    <dt>Autor:</dt>
+                    <dd>Oscar Wilde</dd>
+                    <hr>
+                    <dt>Genero:</dt> 
+                    <dd>Novela gótica</dd>
+                    <hr>
+                    <dt>Editorial:</dt>
+                    <dd>Ward Lock & Co</dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+
+    
+
+</main>
+    
+{% endblock content %}
