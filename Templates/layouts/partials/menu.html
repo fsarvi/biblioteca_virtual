@@ -22,14 +22,20 @@
 							<li><a href="#">Pendientes</a></li>	
 
 							<div class="clear">
-                               </div>
+                               				</div>
 						</ul>
 
-				    </div>	
+				    	</div>	
 
-    			    <div class="clear">
-						{% include 'layouts/partials/buscador.html' %}
-                    </div>
+    			    	
+				  </div>	
+					<div class="d-flex">
+						<div class="p-1">
+							{% include 'layouts/partials/buscador.html' %}
+						</div>
+						<button id="lupa" class="btn btn-outline-success" onmouseover="desplegarBuscador()" onclick="cierreBuscador()">
+						</button>
+					</div>
     	    	</div>
 
       		</div>
