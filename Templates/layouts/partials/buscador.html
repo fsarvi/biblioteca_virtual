@@ -1,21 +1,23 @@
 {% load static %}
-    <form action="/buscar" method="get">
+    <form class="d-flex buscador" action="/buscar" method="get">
         {% csrf_token %}
-        <input type="text" id="busqueda" name="busqueda"  
-        minlength="2" maxlength="40" size="20">
+        <div id="buscador-desplegable" class="buscador-oculto">
+            <input class="rounded" type="text" id="busqueda" name="busqueda"  
+            minlength="2" maxlength="40" size="20">
 
-        <select name="categoria" id="categoria">
-            <option value="titulo">Título</option>
-            <option value="autor">Autor</option>
-        </select>
-        <select name="genero" id="genero">
-            <option selected="true" disabled="disabled">Género</option>    
-            {% for genero in generos %}
-            <option value={{genero.nombre}}>{{genero.nombre}}</option>
-                    {{genero.nombre}}
-            {% endfor %}
-        </select>
-        <input type="submit" value="Buscar"/>
+            <select class="bg-dark text-info" name="categoria" id="categoria">
+                <option value="titulo">Título</option>
+                <option value="autor">Autor</option>
+            </select>
+            <select class="bg-dark text-info" name="genero" id="genero">
+                <option selected="true" disabled="disabled">Género</option>    
+                {% for genero in generos %}
+                <option value={{genero.nombre}}>{{genero.nombre}}</option>
+                        {{genero.nombre}}
+                {% endfor %}
+            </select>
+            <input class="btn btn-outline-info"  type="submit" value="Buscar"/>
+        </div>
     </form>
     {% if messages %}
         <ul class="messages">
