@@ -49,8 +49,9 @@ html,body {
 }
 
 .header-left {
-	float: left;
-	width: 59%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
 }
 
 /* margin right con 2% para que sea responsive */
@@ -93,7 +94,28 @@ html,body {
 	color: red;
 }
 
+.buscador input:first-child{
+	background-color: rgb(32, 30, 30);
+	border-color: rgb(55, 167, 219);
+	color: #85e9f0;
+}
 
+#lupa{
+	background-image: url(../img/icono-buscador/search.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	padding: 10px 20px;
+}
+
+.buscador-oculto{
+	display: flex;
+	width: max-content;
+	overflow: hidden;
+	height: max-content;
+	outline: none;
+	transition: ease-in-out 1s;
+	padding-left: 100%;
+}
 
 
 
