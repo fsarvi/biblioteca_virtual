@@ -54,13 +54,14 @@ def buscar(request):
 
     else:
 
-        if request.GET['genero']:
+        try:
+            request.GET['genero']
             genero = request.GET['genero']
             buscador = Libro.objects.filter(genero__nombre__icontains=genero)
 
             libros = {"libros": buscador}
         
-        else:
+        except:
             messages.error(request, 'El buscador sólo puede ir vacío si selecciona un género')
             libros = {"libros": Libro.objects.all().values()}
             return render(request, 'index.html', libros)
