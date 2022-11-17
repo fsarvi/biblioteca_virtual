@@ -71,7 +71,7 @@ class Libro(models.Model):
     genero = models.ManyToManyField(Genero)
     critica = models.OneToOneField(Critica, on_delete=models.CASCADE)
     estado = models.ForeignKey(Estado, on_delete=models.CASCADE)
-    autor = models.ForeignKey(Autor, on_delete=models.CASCADE)
+    autor = models.ForeignKey(Autor, on_delete=models.CASCADE, default = 1)
     resenia = models.OneToOneField(Resenia, on_delete=models.CASCADE)
 
     def __str__(self):
