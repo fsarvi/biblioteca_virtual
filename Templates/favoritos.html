@@ -1,0 +1,147 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+
+
+{% block content %}
+    
+<div id="tf-header" class="bg-success">
+    <div class="container">
+        <h1>Favoritos</h1>
+        <ol class="breadcrumb">
+            <li><a href="{% url 'index' %}">Home</a></li>
+            <li>favoritos</li>
+        </ol>
+    </div>
+</div>
+
+<div class="container shadow-lg">
+    <div class="row">
+        <div class="p-2 p-md-5 text-center">
+            <img src="{% static 'img/favoritos/iconos/favoritos.png' %}" alt="">
+            <h1 class="text-success display-3">Libros marcados</h1>
+            <h1 class="text-success display-3">como <strong class="text-uppercase">favoritos</strong></h1>
+        </div>
+        <hr>
+        <div class="col-md-4 col-lg-3 mb-3">
+            <div class="bg-translucido text-success rounded text-center pt-3 pb-2 favoritos">
+                <img class="" src="{% static 'img/favoritos/kafka.webp' %}" alt="">
+                <h6>Haruki Murakami</h6>
+                <h3>Kafka en la orilla</h3>
+                <div class="iconos-favoritos">
+                    <span class="text-dark">
+                        <img src="{% static 'img/favoritos/iconos/nuevo.png' %}" alt="">
+                        <h6>Nuevo</h6>
+                    </span>
+                    <span>
+                        <img src="{% static 'img/favoritos/iconos/leyendo.png' %}" alt="">
+                        <h6>Leyendo</h6>
+                    </span>
+                </div>
+                <span class="bg-translucido">Genero: drama</span>
+            </div>
+        </div>
+
+        <div class="col-md-4 col-lg-3 mb-3">
+            <div class="bg-translucido text-success rounded text-center pt-3 pb-2 favoritos">
+                <img class="" src="{% static 'img/favoritos/tokioblues.webp' %}" alt="">
+                <h6>Haruki Murakami</h6>
+                <h3>Tokio Blues</h3>
+                <div class="iconos-favoritos">
+                    <span>
+                        <img src="{% static 'img/favoritos/iconos/leido.png' %}" alt="">
+                        <h6>Finalizado</h6>
+                    </span>
+                </div>
+                <span class="bg-translucido">Genero: drama</span>
+            </div>
+        </div>
+
+        <div class="col-md-4 col-lg-3 mb-3">
+            <div class="bg-translucido text-success rounded text-center pt-3 pb-2 favoritos">
+                <img class="" src="{% static 'img/favoritos/casaespiritus.webp' %}" alt="">
+                <h6>Isabel Allende</h6>
+                <h3>La casa de los espiritus</h3>
+                <div class="iconos-favoritos">
+                    <span class="text-dark">
+                        <img src="{% static 'img/favoritos/iconos/nuevo.png' %}" alt="">
+                        <h6> nuevo</h6>
+                    </span>
+                    <span>
+                        <img src="{% static 'img/favoritos/iconos/leyendo.png' %}" alt="">
+                        <h6>leyendo </h6>
+                    </span>
+                </div>
+                <span class="bg-translucido">Genero: drama</span>
+            </div>
+        </div>
+
+        <div class="col-md-4 col-lg-3 mb-3">
+            <div class="bg-translucido text-success rounded text-center pt-3 pb-2 favoritos">
+                <img class="" src="{% static 'img/favoritos/catedralmar.webp' %}" alt="">
+                <h6>Ildefonso Falcone</h6>
+                <h3>La catedral del mar</h3>
+                <div class="iconos-favoritos">
+                    <span class="text-dark">
+                        <img src="{% static 'img/favoritos/iconos/nuevo.png' %}" alt="">
+                        <h6>nuevo</h6>
+                    </span>
+                    <span>
+                        <img src="{% static 'img/favoritos/iconos/leyendo.png' %}" alt="">
+                        <h6>leyendo</h6>
+                    </span>
+                </div>
+                <span class="bg-translucido">Genero: drama</span>
+            </div>
+        </div>
+
+        <div class="col-md-4 col-lg-3 mb-3">
+            <div class="bg-translucido text-success rounded text-center pt-3 pb-2 favoritos">
+                <img class="" src="{% static 'img/favoritos/ciensoledad.webp' %}" alt="">
+                <h6>Gabriel Garcia Marquez</h6>
+                <h3>100 años de soledad</h3>
+                <div class="iconos-favoritos">
+                    <span class="text-success">
+                        <img src="{% static 'img/favoritos/iconos/leido.png' %}" alt="">
+                        <h6>Finalizado</h6>
+                    </span>
+                </div>
+                <span class="bg-translucido">Genero: drama</span>
+            </div>
+        </div>
+
+        <div class="col-md-4 col-lg-3 mb-3">
+            <div class="bg-translucido text-success rounded text-center pt-3 pb-2 favoritos">
+                <img class="" src="{% static 'img/favoritos/rosa.webp' %}" alt="">
+                <h6>Humberto Eco</h6>
+                <h3>El nombre de la rosa</h3>
+                <div class="iconos-favoritos">
+                    <span class="text-success">
+                        <img src="{% static 'img/favoritos/iconos/leido.png' %}" alt="">
+                        <h6>Finalizado</h6>
+                    </span>
+                </div>
+                <span class="bg-translucido">Genero: drama</span>
+            </div>
+        </div>
+        
+        <div class="col-md-4 col-lg-3 mb-3">
+            <div class="bg-translucido text-success rounded text-center pt-3 pb-2 favoritos">
+                <img class="" src="{% static 'img/favoritos/sombraviento.webp' %}" alt="">
+                <h6>Carlos Ruiz Zafon</h6>
+                <h3>La sombra del viento</h3>
+                <div class="iconos-favoritos">
+                    <span class="text-success">
+                        <img src="{% static 'img/favoritos/iconos/leido.png' %}" alt="">
+                        <h6>Finalizado</h6>
+                    </span>
+                </div>
+                <span class="bg-translucido">Genero: drama</span>
+            </div>
+        </div>
+
+    </div>
+    <hr>
+</div>
+
+
+{% endblock content %}
