@@ -26,6 +26,8 @@ def index(request):
 
     return render(request, 'index.html', libros)
 
+def favoritos(request):
+    return render(request, 'favoritos.html')
 
 def resenias(request):
 
