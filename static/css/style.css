@@ -587,3 +587,26 @@ ul .imagen_equipo{
 #title_biblioteca{
 	padding:2%;
 }
+
+
+/*######################################################...FAVORITOS.HTML...######################################################*/
+
+.favoritos>img{
+	width: 200px;
+	height: 200px;
+	border-radius: 50%;
+}
+
+.favorito>div{
+	border: #000 1px solid;
+}
+
+.iconos-favoritos{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+}
+.iconos-favoritos img{
+	width: 30px;
+	margin-left: 10px;
+}
