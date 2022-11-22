@@ -40,6 +40,8 @@ def resenias(request):
 def entrada_resenia(request):
     return render(request, "entradareseña.html")
 
+def pendientes(request):
+    return render(request, "pendientes.html")
 
 def equipo(request):
     return render(request, 'equipo.html', {})
