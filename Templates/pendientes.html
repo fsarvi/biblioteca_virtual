@@ -1,0 +1,127 @@
+{% extends 'layouts/base.html' %}
+
+{% load static %}
+
+
+{% block content %}
+    <div id="tf-header" class="bg-success">
+        <div class="container">
+            <h1>Pendientes</h1>
+            <ol class="breadcrumb">
+                <li><a href="{% url 'index' %}">Home</a></li>
+                <li>Pendientes</li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row shadow-lg pb-3 pb-md-5 puntos">
+            <div>
+                <h1 class="display-1 text-center p-2 p-md-5">
+                    <img src="{% static 'img/pendientes/iconos/lista.png' %}" alt="">
+                    <strong class="text-uppercase text-success"> pendientes</strong>
+                </h1>
+            </div>
+
+            <a href="#" class="col-md-6 container pendiente-box text-success">
+                <div class="row">
+                    <div class="col-sm-6 p-0">
+                        <img class="" src="{% static 'img/pendientes/1984.webp' %}" alt="">
+                    </div>
+                    <div class="col-sm-6 item-pbox">
+                        <h3 class="shadow-sm p-1 rounded">1984</h3>
+                        <h5 class="shadow-sm p-1 rounded">George Orwell</h5>
+                        <h6 class="shadow-sm p-1 rounded">novela distopica</h6>
+                        <img class="shadow-sm rounded icono" src="{% static 'img/pendientes/iconos/libro-pendiente.png' %}" alt="">
+                    </div>
+                </div>
+            </a>
+
+            <a href="#" class="col-md-6 container pendiente-box text-success">
+                <div class="row">
+                    <div class="col-sm-6 p-0">
+                        <img class="" src="{% static 'img/pendientes/del-nuevo-mundo.webp' %}" alt="">
+                    </div>
+                    <div class="col-sm-6 item-pbox">
+                        <h3 class="shadow-sm p-1 rounded">Del nuevo mundo</h3>
+                        <h5 class="shadow-sm p-1 rounded">Yusuke Kishi</h5>
+                        <h6 class="shadow-sm p-1 rounded">ciencia ficcion</h6>
+                        <img class="shadow-sm rounded icono" src="{% static 'img/pendientes/iconos/libro-pendiente.png' %}" alt="">
+                    </div>
+                </div>
+            </a>
+
+            <a href="#" class="col-md-6 container pendiente-box text-success">
+                <div class="row">
+                    <div class="col-sm-6 p-0">
+                        <img class="" src="{% static 'img/pendientes/farenheit.webp' %}" alt="">
+                    </div>
+                    <div class="col-sm-6 item-pbox">
+                        <h3 class="shadow-sm p-1 rounded">Farenheit 451</h3>
+                        <h5 class="shadow-sm p-1 rounded">Ray Bradbury</h5>
+                        <h6 class="shadow-sm p-1 rounded">novela distopica</h6>
+                        <img class="shadow-sm rounded icono" src="{% static 'img/pendientes/iconos/libro-pendiente.png' %}" alt="">
+                    </div>
+                </div>
+            </a>
+
+            <a href="#" class="col-md-6 container pendiente-box text-success">
+                <div class="row">
+                    <div class="col-sm-6 p-0">
+                        <img class="" src="{% static 'img/pendientes/terramar.webp' %}" alt="">
+                    </div>
+                    <div class="col-sm-6 item-pbox">
+                        <h3 class="shadow-sm p-1 rounded">Historias de Terramar 1</h3>
+                        <h5 class="shadow-sm p-1 rounded">Ursula K. Le Guin</h5>
+                        <h6 class="shadow-sm p-1 rounded">fantasia</h6>
+                        <img class="shadow-sm rounded icono" src="{% static 'img/pendientes/iconos/libro-pendiente.png' %}" alt="">
+                    </div>
+                </div>
+            </a>
+
+            <a href="#" class="col-md-6 container pendiente-box text-success">
+                <div class="row">
+                    <div class="col-sm-6 p-0">
+                        <img class="" src="{% static 'img/pendientes/random.webp' %}" alt="">
+                    </div>
+                    <div class="col-sm-6 item-pbox">
+                        <h3 class="shadow-sm p-1 rounded">Titulo random</h3>
+                        <h5 class="shadow-sm p-1 rounded">Autor Random</h5>
+                        <h6 class="shadow-sm p-1 rounded">genero random</h6>
+                        <img class="shadow-sm rounded icono" src="{% static 'img/pendientes/iconos/libro-pendiente.png' %}" alt="">
+                    </div>
+                </div>
+            </a>
+
+            <a href="#" class="col-md-6 container pendiente-box text-success">
+                <div class="row">
+                    <div class="col-sm-6 p-0">
+                        <img class="" src="{% static 'img/pendientes/random.webp' %}" alt="">
+                    </div>
+                    <div class="col-sm-6 item-pbox">
+                        <h3 class="shadow-sm p-1 rounded">Titulo random</h3>
+                        <h5 class="shadow-sm p-1 rounded">Autor Random</h5>
+                        <h6 class="shadow-sm p-1 rounded">genero random</h6>
+                        <img class="shadow-sm rounded icono" src="{% static 'img/pendientes/iconos/libro-pendiente.png' %}" alt="">
+                    </div>
+                </div>
+            </a>
+
+            <a href="#" class="col-md-6 container pendiente-box text-success">
+                <div class="row">
+                    <div class="col-sm-6 p-0">
+                        <img class="" src="{% static 'img/pendientes/random.webp' %}" alt="">
+                    </div>
+                    <div class="col-sm-6 item-pbox">
+                        <h3 class="shadow-sm p-1 rounded">Titulo random</h3>
+                        <h5 class="shadow-sm p-1 rounded">Autor Random</h5>
+                        <h6 class="shadow-sm p-1 rounded">genero random</h6>
+                        <img class="shadow-sm rounded icono" src="{% static 'img/pendientes/iconos/libro-pendiente.png' %}" alt="">
+                    </div>
+                </div>
+            </a>
+
+        </div>
+    </div>
+
+{% endblock content %}
