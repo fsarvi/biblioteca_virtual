@@ -610,3 +610,46 @@ ul .imagen_equipo{
 	width: 30px;
 	margin-left: 10px;
 }
+
+
+/*######################################################...PENDIENTES.HTML...######################################################*/
+
+.puntos{
+	background-image: linear-gradient(180deg, rgba(201, 248, 228, 0.88),rgba(155, 255, 212, 0.450)),url("../img/pendientes/iconos/puntos.png");
+}
+
+.pendiente-box{
+	max-height: 220px;
+	overflow: hidden;
+	padding: 2%;
+}
+.pendiente-box img{
+	width: 100%;
+}
+
+.item-pbox{
+	display: grid;
+	grid-auto-rows: min-content;
+	background: linear-gradient(#93dfc4,#43c4be);
+	padding: 0 20px;
+}
+
+.item-pbox h3,
+.item-pbox h5,
+.item-pbox h6{
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 1;
+	line-clamp: 1;
+	overflow: hidden;
+}
+
+.item-pbox img{
+	width: 15%;
+}
+
+a:hover , a>div:hover{
+	transform: scale(1.02);
+	transition: all ease-in-out .3s;
+	box-shadow: 10px 1px 100px rgba(56, 255, 189, 0.507);
+}	
