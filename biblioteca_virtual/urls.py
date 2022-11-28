@@ -13,6 +13,8 @@ urlpatterns = [
     path('entrada-reseña', views.entrada_resenia, name='entradareseña'),
     path('favoritos', views.favoritos, name='favoritos'),
     path('pendientes', views.pendientes, name='pendientes'),
+    path('tecnologia_libros', views.tecnologia_libros, name='tecnologia_libros'),
+    path('audiolibros', views.audiolibros, name='audiolibros'),
     # # URLs solo para poblar la base de datos
     # path('llenar_recomendaciones_1/', views.llenar_recomendaciones_1, name='llenar_recomendaciones_1'),
     # path('llenar_recomendaciones_1/llenar_recomendaciones/', views.llenar_recomendaciones, name='llenar_recomendaciones'),

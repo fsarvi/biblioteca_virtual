@@ -22,7 +22,8 @@ from .models import Persona, Autor, Usuario, Editorial, Genero, Critica, Estado,
 def index(request):
     libros = Libro.objects.all().values()
     generos = Genero.objects.all().values()
-    libros = {"libros": libros, "generos": generos}
+    estados = Estado.objects.all().values()
+    libros = {"libros": libros, "generos": generos, "estados":estados}  
 
     return render(request, 'index.html', libros)
 
@@ -401,3 +402,10 @@ def llenar_libros(request):
 #         libro_relacionado_imagen =  lr[x][1]  )
 #         lis_rel.save()
 #     return HttpResponseRedirect(reverse('index'))
+
+
+def tecnologia_libros(request):
+    return render(request,"tecnologia_libros.html")
+
+def audiolibros(request):
+    return render(request,"audiolibros.html")
