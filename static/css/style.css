@@ -1,6 +1,6 @@
 :root{
     --color-principal: rgb(17, 3, 43);
-    --color-secundario: rgb(201, 248, 228);
+    --color-secundario: #c9f8e4;
     --color-terciario:  rgba(202, 255, 252, 0.7);
 	--color-cuarto: rgb(49, 0, 0);
 	--color-quinto: #ffffff; 
@@ -462,6 +462,8 @@ li.youtube a span {
 	width: 10vh;
 }
 
+
+
 /*######################################################...RESEÑAS.HTML...######################################################*/
 .posted{
 	border-radius: 5px;
@@ -660,3 +662,45 @@ ul .imagen_equipo{
 	transition: all ease-in-out .3s;
 	box-shadow: 10px 1px 100px rgba(56, 255, 189, 0.507);
 }	
+
+
+
+/*######################################################...TECNOLOGIA_LIBROS.HTML...######################################################*/
+
+.tecnologia-img-ppal{
+	background-image: url("../img/tecnologia_libros/portada.webp");
+	background-position: center;
+	background-size: cover;
+	width: 100%;
+}
+
+.tecnologia-img-ppal h1{
+	background-color: rgb(198 255 226 / 25%);
+    border-radius: 10px 10px;
+    backdrop-filter: blur(5px);
+    margin-top: 1%;
+    color: #e6fffc;
+    text-shadow: 0px 0px 2px #0a0234;
+}
+
+.img-tecnologia-box{
+	height: 220px;
+	width: 100%;
+}
+
+
+
+/*######################################################...AUDIOLIBROS.HTML...######################################################*/
+
+.borde-box{
+	border-radius: 50px;
+	background: #c9f8e4;
+	box-shadow:  20px 20px 60px #abd3c2,
+    	         -20px -20px 60px #e7ffff;
+}
+
+.audiolibro-box-img img{
+	width: 100%;
+	height: fit-content;
+}
+
