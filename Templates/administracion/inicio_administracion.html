@@ -1,0 +1,69 @@
+{% extends 'administracion/layouts/base.html' %}
+
+{% load static %}
+
+{% block content %}
+	
+<div class="main">
+
+	<div class="book_top">
+
+		<div class="container">
+
+			<div class="row book_box-top">
+
+				<h1 class="display-1"> Bienvenido</h1>
+				<h2 class="display-6 text-secondary">Administración</h2>
+
+				{% for libro in libros %}
+
+					<div class="col-md-3 book_box mb-3">
+							
+						<a href=" {% url 'sinopsis' id=libro.id %} ">
+						{% comment "" %}
+							|add:imagen|add: YA CUMPLE COMO FILTRO EN LA TEMPLATE
+						{% endcomment %}
+							<img src="{% static 'img/'|add:libro.imagen|add:'.jpg' %}" class="img-fluid" alt=""/>
+
+							
+							{% if libro.nuevo %}
+							<span class="new-box">
+								<span class="new-label">Nuevo</span>
+							</span>
+							{% endif %}
+
+							{% if libro.leyendo %}
+							<span class="lectura-box">
+								<span class="lectura-label">Leyendo</span>
+							</span>
+							{% endif %}
+								
+							<div class="book_desc shadow">
+								
+								<h3><a href="{% url 'sinopsis' id=libro.id %}">{{ libro.titulo }}</a></h3>
+								<p>{{ libro.descripcion }}</p>
+								<span>Puntuacion: </span>
+								<span class="actual">6/10</span><br>
+
+								<ul class="buttons">
+									<li class="cart"><a href="{% url 'sinopsis' id=libro.id %}">Puntuar</a></li>
+									<li class="book_btn"><a href="#">Leer</a></li>
+									
+									<div class="clear"></div>
+								</ul>
+									
+							</div>
+						</a>
+					</div>
+		
+				{% empty %}
+					<p>Ups! No hay libros disponibles</p>
+				{% endfor %}
+					
+
+			</div>
+		</div>
+	</div>
+</div>
+
+{% endblock content %}

@@ -1,0 +1,80 @@
+{% load static %}
+<div class="header">
+
+	<div class="container">
+
+		<div class="row">
+			<div class="col-md-12">
+
+				<div class="header-left">
+
+					<div class="logo">
+						<a href="#"><img src="{% static 'img/logo.png' %}" alt=""/></a>
+					</div>
+
+					<div class="menu">
+
+						<ul class="nav" id="nav">
+
+							<li class="current"><a href="{% url 'index' %}">libros</a></li>
+							<li>
+								<a href="">crear</a>
+								<ul class="crear">
+									<li class="current"><a href="{% url 'crear_libro' %}">Libro</a></li>
+									<li class="current"><a href="{% url 'index' %}">Autor</a></li>
+									<li class="current"><a href="{% url 'index' %}">Estado</a></li>
+									<li class="current"><a href="{% url 'crear_genero' %}">Género</a></li>
+									<li class="current"><a href="{% url 'crear_editorial' %}">Editorial</a></li>
+									<li class="current"><a href="{% url 'index' %}">Usuario</a></li>
+
+								</ul>
+							</li>
+							
+							<li>
+								<a href="">editar</a>
+								<ul class="editar">
+									<li class="current"><a href="{% url 'index' %}">Libro</a></li>
+									<li class="current"><a href="{% url 'index' %}">Autor</a></li>
+									<li class="current"><a href="{% url 'index' %}">Estado</a></li>
+									<li class="current"><a href="{% url 'index' %}">Género</a></li>
+									<li class="current"><a href="{% url 'index' %}">Editorial</a></li>
+									<li class="current"><a href="{% url 'index' %}">Usuario</a></li>
+
+								</ul>
+							</li>
+							<li>
+								<a href="">eliminar</a>
+								<div>
+								<ul class="eliminar">
+									<li class="current"><a href="{% url 'index' %}">Libro</a></li>
+									<li class="current"><a href="{% url 'index' %}">Autor</a></li>
+									<li class="current"><a href="{% url 'index' %}">Estado</a></li>
+									<li class="current"><a href="{% url 'index' %}">Género</a></li>
+									<li class="current"><a href="{% url 'index' %}">Editorial</a></li>
+									<li class="current"><a href="{% url 'index' %}">Usuario</a></li>
+
+								</ul>
+							</div>
+							</li>	
+
+							<div class="clear">
+                            </div>
+						</ul>
+				    </div>	
+					
+					<div class="d-flex">
+						<div class="p-1">
+							{% include 'layouts/partials/buscador.html' %}
+						</div>
+						<button id="lupa" class="btn btn-outline-success" onmouseover="desplegarBuscador()" onclick="cierreBuscador()">
+						</button>
+					</div>
+    	    	</div>
+
+      		</div>
+
+	 	</div>
+
+    </div>
+    
+</div>

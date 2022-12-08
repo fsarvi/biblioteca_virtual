@@ -1,6 +1,7 @@
 from django import forms
 from django.forms import ValidationError
 
+
 def solo_caracteres(value):
     if any(char.isdigit() for char in value ):
         raise ValidationError('El campo no puede contener números: %(valor)s',
