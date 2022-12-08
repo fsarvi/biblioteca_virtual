@@ -16,4 +16,17 @@ urlpatterns = [
     path('crear_editorial/', views.crear_editorial, name= 'crear_editorial'),
     path('editar_editorial/', views.editar_editorial, name= 'editar_editorial'),
     path('eliminar_editorial/', views.eliminar_editorial, name= 'eliminar_editorial'),
+
+    path('crear_persona/', views.crear_persona, name= 'crear_persona'),
+    path('editar_persona/', views.editar_persona, name= 'editar_persona'),
+    path('eliminar_persona/', views.eliminar_persona, name= 'eliminar_persona'),
+
+    path('crear_autor/', views.crear_autor, name= 'crear_autor'),
+    path('editar_autor/', views.editar_autor, name= 'editar_autor'),
+    path('eliminar_autor/', views.eliminar_autor, name= 'eliminar_autor'),
+
+    path('crear_usuario/', views.crear_usuario, name= 'crear_usuario'),
+    path('editar_usuario/', views.editar_usuario, name= 'editar_usuario'),
+    path('eliminar_usuario/', views.eliminar_usuario, name= 'eliminar_usuario'),
+
     ]

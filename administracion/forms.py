@@ -44,3 +44,30 @@ class EditorialForm(forms.ModelForm):
         widgets = {
             'nombre': forms.TextInput(attrs={'class': 'form-control'}),
         }
+
+class PersonaForm(forms.ModelForm):
+
+    class Meta:
+        model = Persona
+        fields = ['nombre', 'apellido']
+        widgets = {
+            'nombre': forms.TextInput(attrs={'class': 'form-control'}),
+            'apellido': forms.TextInput(attrs={'class': 'form-control'}),
+        }
+
+class AutorForm(forms.ModelForm):
+
+    class Meta:
+        model = Autor
+        fields = ['persona',]
+
+class UsuarioForm(forms.ModelForm):
+
+    class Meta:
+        model = Usuario
+        fields = ['persona', 'correo', 'contrasenia']
+
+        widgets = {
+            'correo': forms.EmailInput(attrs={'class': 'form-control'}),
+            'contrasenia': forms.TextInput(attrs={'class': 'form-control'}),
+        }

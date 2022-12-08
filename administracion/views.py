@@ -1,8 +1,8 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
 
-from biblioteca_virtual.models import Libro, Genero, Editorial
-from administracion.forms import LibroForm, GeneroForm, EditorialForm
+from biblioteca_virtual.models import Libro, Genero, Editorial, Estado, Autor, Persona, Usuario
+from administracion.forms import LibroForm, GeneroForm, EditorialForm, AutorForm, PersonaForm, UsuarioForm
 
 def inicio(request):
 
@@ -66,3 +66,62 @@ def editar_editorial(request):
 def eliminar_editorial(request):
 
     return render(request, 'administracion/inicio_administracion.html')
+
+def crear_persona(request):
+
+    formulario = PersonaForm(request.POST or None,request.FILES or None)
+
+    if formulario.is_valid():
+        formulario.save()
+        messages.success(request,'Se ha creado editorial de forma exitosa')   
+        return redirect('administracion/inicio_administracion.html')
+
+    return render(request,'administracion/crear_persona.html',{'formulario':formulario})
+
+def editar_persona(request):
+
+    return render(request, 'administracion/inicio_administracion.html')
+
+def eliminar_persona(request):
+
+    return render(request, 'administracion/inicio_administracion.html')
+
+def crear_autor(request):
+
+    formulario = AutorForm(request.POST or None,request.FILES or None)
+
+    if formulario.is_valid():
+        formulario.save()
+        messages.success(request,'Se ha creado editorial de forma exitosa')   
+        return redirect('administracion/inicio_administracion.html')
+
+    return render(request,'administracion/crear_autor.html',{'formulario':formulario})
+
+def editar_autor(request):
+
+    return render(request, 'administracion/inicio_administracion.html')
+
+def eliminar_autor(request):
+
+    return render(request, 'administracion/inicio_administracion.html')
+
+def crear_usuario(request):
+
+    formulario = UsuarioForm(request.POST or None,request.FILES or None)
+
+    if formulario.is_valid():
+        formulario.save()
+        messages.success(request,'Se ha creado editorial de forma exitosa')   
+        return redirect('administracion/inicio_administracion.html')
+
+    return render(request,'administracion/crear_usuario.html',{'formulario':formulario})
+
+def editar_usuario(request):
+
+    return render(request, 'administracion/inicio_administracion.html')
+
+def eliminar_usuario(request):
+
+    return render(request, 'administracion/inicio_administracion.html')
+
+
