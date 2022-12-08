@@ -15,7 +15,7 @@ def crear_libro(request):
     if formulario.is_valid():
         formulario.save()
         messages.success(request,'Se ha creado el libro de forma exitosa')   
-        return redirect('administracion/inicio_administracion.html')
+        return redirect('inicio')
 
     return render(request,'administracion/crear_libro.html',{'formulario':formulario})
 
@@ -35,7 +35,7 @@ def crear_genero(request):
     if formulario.is_valid():
         formulario.save()
         messages.success(request,'Se ha creado el género de forma exitosa')   
-        return redirect('administracion/inicio_administracion.html')
+        return redirect('inicio')
 
     return render(request,'administracion/crear_genero.html',{'formulario':formulario})
 
@@ -55,7 +55,7 @@ def crear_editorial(request):
     if formulario.is_valid():
         formulario.save()
         messages.success(request,'Se ha creado editorial de forma exitosa')   
-        return redirect('administracion/inicio_administracion.html')
+        return redirect('inicio')
 
     return render(request,'administracion/crear_editorial.html',{'formulario':formulario})
 
@@ -73,8 +73,8 @@ def crear_persona(request):
 
     if formulario.is_valid():
         formulario.save()
-        messages.success(request,'Se ha creado editorial de forma exitosa')   
-        return redirect('administracion/inicio_administracion.html')
+        messages.success(request,'Se ha creado la persona de forma exitosa')   
+        return redirect('inicio')
 
     return render(request,'administracion/crear_persona.html',{'formulario':formulario})
 
@@ -92,8 +92,8 @@ def crear_autor(request):
 
     if formulario.is_valid():
         formulario.save()
-        messages.success(request,'Se ha creado editorial de forma exitosa')   
-        return redirect('administracion/inicio_administracion.html')
+        messages.success(request,'Se ha creado el autor de forma exitosa')   
+        return redirect('inicio')
 
     return render(request,'administracion/crear_autor.html',{'formulario':formulario})
 
@@ -111,8 +111,8 @@ def crear_usuario(request):
 
     if formulario.is_valid():
         formulario.save()
-        messages.success(request,'Se ha creado editorial de forma exitosa')   
-        return redirect('administracion/inicio_administracion.html')
+        messages.success(request,'Se ha creado el usuario de forma exitosa')   
+        return redirect('inicio')
 
     return render(request,'administracion/crear_usuario.html',{'formulario':formulario})
 
