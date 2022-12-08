@@ -17,6 +17,14 @@ urlpatterns = [
     path('editar_editorial/', views.editar_editorial, name= 'editar_editorial'),
     path('eliminar_editorial/', views.eliminar_editorial, name= 'eliminar_editorial'),
 
+    path('crear_critica/', views.crear_critica, name= 'crear_critica'),
+    path('editar_critica/', views.editar_critica, name= 'editar_critica'),
+    path('eliminar_critica/', views.eliminar_critica, name= 'eliminar_critica'),
+
+    path('crear_resenia/', views.crear_resenia, name= 'crear_resenia'),
+    path('editar_resenia/', views.editar_resenia, name= 'editar_resenia'),
+    path('eliminar_resenia/', views.eliminar_resenia, name= 'eliminar_resenia'),
+
     path('crear_persona/', views.crear_persona, name= 'crear_persona'),
     path('editar_persona/', views.editar_persona, name= 'editar_persona'),
     path('eliminar_persona/', views.eliminar_persona, name= 'eliminar_persona'),

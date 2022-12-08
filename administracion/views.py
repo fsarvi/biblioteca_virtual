@@ -1,27 +1,31 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
 
-from biblioteca_virtual.models import Libro, Genero, Editorial, Estado, Autor, Persona, Usuario
-from administracion.forms import LibroForm, GeneroForm, EditorialForm, AutorForm, PersonaForm, UsuarioForm
+from biblioteca_virtual.models import Libro, Genero, Editorial, Estado, Autor, Persona, Usuario, Critica, Resenia
+from administracion.forms import LibroForm, GeneroForm, EditorialForm, AutorForm, PersonaForm, UsuarioForm, CriticaForm, ReseniaForm
+
 
 def inicio(request):
 
     return render(request, 'administracion/inicio_administracion.html')
 
+
 def crear_libro(request):
 
-    formulario = LibroForm(request.POST or None,request.FILES or None)
+    formulario = LibroForm(request.POST or None, request.FILES or None)
 
     if formulario.is_valid():
         formulario.save()
-        messages.success(request,'Se ha creado el libro de forma exitosa')   
+        messages.success(request, 'Se ha creado el libro de forma exitosa')
         return redirect('inicio')
 
-    return render(request,'administracion/crear_libro.html',{'formulario':formulario})
+    return render(request, 'administracion/crear_libro.html', {'formulario': formulario})
+
 
 def editar_libro(request):
 
     return render(request, 'administracion/inicio_administracion.html')
+
 
 def eliminar_libro(request):
 
@@ -30,18 +34,20 @@ def eliminar_libro(request):
 
 def crear_genero(request):
 
-    formulario = GeneroForm(request.POST or None,request.FILES or None)
+    formulario = GeneroForm(request.POST or None, request.FILES or None)
 
     if formulario.is_valid():
         formulario.save()
-        messages.success(request,'Se ha creado el género de forma exitosa')   
+        messages.success(request, 'Se ha creado el género de forma exitosa')
         return redirect('inicio')
 
-    return render(request,'administracion/crear_genero.html',{'formulario':formulario})
+    return render(request, 'administracion/crear_genero.html', {'formulario': formulario})
+
 
 def editar_genero(request):
 
     return render(request, 'administracion/inicio_administracion.html')
+
 
 def eliminar_genero(request):
 
@@ -50,78 +56,131 @@ def eliminar_genero(request):
 
 def crear_editorial(request):
 
-    formulario = EditorialForm(request.POST or None,request.FILES or None)
+    formulario = EditorialForm(request.POST or None, request.FILES or None)
 
     if formulario.is_valid():
         formulario.save()
-        messages.success(request,'Se ha creado editorial de forma exitosa')   
+        messages.success(request, 'Se ha creado editorial de forma exitosa')
         return redirect('inicio')
 
-    return render(request,'administracion/crear_editorial.html',{'formulario':formulario})
+    return render(request, 'administracion/crear_editorial.html', {'formulario': formulario})
+
 
 def editar_editorial(request):
 
     return render(request, 'administracion/inicio_administracion.html')
 
+
 def eliminar_editorial(request):
 
     return render(request, 'administracion/inicio_administracion.html')
 
-def crear_persona(request):
 
-    formulario = PersonaForm(request.POST or None,request.FILES or None)
+def crear_critica(request):
+
+    formulario = CriticaForm(request.POST or None, request.FILES or None)
 
     if formulario.is_valid():
         formulario.save()
-        messages.success(request,'Se ha creado la persona de forma exitosa')   
+        messages.success(request, 'Se ha creado la crítica de forma exitosa')
         return redirect('inicio')
 
-    return render(request,'administracion/crear_persona.html',{'formulario':formulario})
+    return render(request, 'administracion/crear_critica.html', {'formulario': formulario})
+
+
+def editar_critica(request):
+
+    return render(request, 'administracion/inicio_administracion.html')
+
+
+def eliminar_critica(request):
+
+    return render(request, 'administracion/inicio_administracion.html')
+
+
+def crear_resenia(request):
+
+    formulario = ReseniaForm(request.POST or None, request.FILES or None)
+
+    if formulario.is_valid():
+        formulario.save()
+        messages.success(request, 'Se ha creado la reseña de forma exitosa')
+        return redirect('inicio')
+
+    return render(request, 'administracion/crear_resenia.html', {'formulario': formulario})
+
+
+def editar_resenia(request):
+
+    return render(request, 'administracion/inicio_administracion.html')
+
+
+def eliminar_resenia(request):
+
+    return render(request, 'administracion/inicio_administracion.html')
+
+
+def crear_persona(request):
+
+    formulario = PersonaForm(request.POST or None, request.FILES or None)
+
+    if formulario.is_valid():
+        formulario.save()
+        messages.success(request, 'Se ha creado la persona de forma exitosa')
+        return redirect('inicio')
+
+    return render(request, 'administracion/crear_persona.html', {'formulario': formulario})
+
 
 def editar_persona(request):
 
     return render(request, 'administracion/inicio_administracion.html')
 
+
 def eliminar_persona(request):
 
     return render(request, 'administracion/inicio_administracion.html')
 
+
 def crear_autor(request):
 
-    formulario = AutorForm(request.POST or None,request.FILES or None)
+    formulario = AutorForm(request.POST or None, request.FILES or None)
 
     if formulario.is_valid():
         formulario.save()
-        messages.success(request,'Se ha creado el autor de forma exitosa')   
+        messages.success(request, 'Se ha creado el autor de forma exitosa')
         return redirect('inicio')
 
-    return render(request,'administracion/crear_autor.html',{'formulario':formulario})
+    return render(request, 'administracion/crear_autor.html', {'formulario': formulario})
+
 
 def editar_autor(request):
 
     return render(request, 'administracion/inicio_administracion.html')
 
+
 def eliminar_autor(request):
 
     return render(request, 'administracion/inicio_administracion.html')
 
+
 def crear_usuario(request):
 
-    formulario = UsuarioForm(request.POST or None,request.FILES or None)
+    formulario = UsuarioForm(request.POST or None, request.FILES or None)
 
     if formulario.is_valid():
         formulario.save()
-        messages.success(request,'Se ha creado el usuario de forma exitosa')   
+        messages.success(request, 'Se ha creado el usuario de forma exitosa')
         return redirect('inicio')
 
-    return render(request,'administracion/crear_usuario.html',{'formulario':formulario})
+    return render(request, 'administracion/crear_usuario.html', {'formulario': formulario})
+
 
 def editar_usuario(request):
 
     return render(request, 'administracion/inicio_administracion.html')
 
+
 def eliminar_usuario(request):
 
     return render(request, 'administracion/inicio_administracion.html')
-
-

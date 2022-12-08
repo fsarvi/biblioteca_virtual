@@ -11,19 +11,19 @@ class LibroForm(forms.ModelForm):
         #imagen como campo charfield, pasar a uno que se puede cargar imagen?
         fields = ['titulo', 'descripcion', 'imagen', 'sinopsis', 'fecha_publicacion',
                   'editorial', 'genero', 'critica', 'estado', 'autor', 'resenia']
-        widgets = {
-            'titulo': forms.TextInput(attrs={'class': 'form-control'}),
-            'descripcion': forms.TextInput(attrs={'class': 'form-control'}),
-            'imagen': forms.TextInput(attrs={'class': 'form-control'}),
-            'sinopsis': forms.TextInput(attrs={'class': 'form-control'}),
-            'fecha_publicacion': forms.TextInput(attrs={'class': 'form-control'}),
-            'editorial': forms.TextInput(attrs={'class': 'form-control'}),
-            'genero': forms.TextInput(attrs={'class': 'form-control'}),
-            'critica': forms.TextInput(attrs={'class': 'form-control'}),
-            'estado': forms.TextInput(attrs={'class': 'form-control'}),
-            'autor': forms.TextInput(attrs={'class': 'form-control'}),
-            'resenia': forms.TextInput(attrs={'class': 'form-control'}),
-        }
+        # widgets = {
+        #     'titulo': forms.TextInput(attrs={'class': 'form-control'}),
+        #     'descripcion': forms.TextInput(attrs={'class': 'form-control'}),
+        #     'imagen': forms.TextInput(attrs={'class': 'form-control'}),
+        #     'sinopsis': forms.TextInput(attrs={'class': 'form-control'}),
+        #     'fecha_publicacion': forms.TextInput(attrs={'class': 'form-control'}),
+        #     'editorial': forms.TextInput(attrs={'class': 'form-control'}),
+        #     'genero': forms.TextInput(attrs={'class': 'form-control'}),
+        #     'critica': forms.TextInput(attrs={'class': 'form-control'}),
+        #     'estado': forms.TextInput(attrs={'class': 'form-control'}),
+        #     'autor': forms.TextInput(attrs={'class': 'form-control'}),
+        #     'resenia': forms.TextInput(attrs={'class': 'form-control'}),
+        # }
 
 class GeneroForm(forms.ModelForm):
 
@@ -43,6 +43,28 @@ class EditorialForm(forms.ModelForm):
         fields = ['nombre',]
         widgets = {
             'nombre': forms.TextInput(attrs={'class': 'form-control'}),
+        }
+
+class CriticaForm(forms.ModelForm):
+
+    class Meta:
+        model = Critica
+        
+        fields = ['critica', 'fuente']
+        widgets = {
+            'critica': forms.TextInput(attrs={'class': 'form-control'}),
+            'fuente': forms.TextInput(attrs={'class': 'form-control'}),
+        }
+
+class ReseniaForm(forms.ModelForm):
+
+    class Meta:
+        model = Resenia
+        
+        fields = ['titulo', 'resenia']
+        widgets = {
+            'titulo': forms.TextInput(attrs={'class': 'form-control'}),
+            'resenia': forms.TextInput(attrs={'class': 'form-control'}),
         }
 
 class PersonaForm(forms.ModelForm):
