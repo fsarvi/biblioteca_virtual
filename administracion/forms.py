@@ -11,19 +11,23 @@ class LibroForm(forms.ModelForm):
         #imagen como campo charfield, pasar a uno que se puede cargar imagen?
         fields = ['titulo', 'descripcion', 'imagen', 'sinopsis', 'fecha_publicacion',
                   'editorial', 'genero', 'critica', 'estado', 'autor', 'resenia']
-        # widgets = {
-        #     'titulo': forms.TextInput(attrs={'class': 'form-control'}),
-        #     'descripcion': forms.TextInput(attrs={'class': 'form-control'}),
-        #     'imagen': forms.TextInput(attrs={'class': 'form-control'}),
-        #     'sinopsis': forms.TextInput(attrs={'class': 'form-control'}),
-        #     'fecha_publicacion': forms.TextInput(attrs={'class': 'form-control'}),
-        #     'editorial': forms.TextInput(attrs={'class': 'form-control'}),
-        #     'genero': forms.TextInput(attrs={'class': 'form-control'}),
-        #     'critica': forms.TextInput(attrs={'class': 'form-control'}),
-        #     'estado': forms.TextInput(attrs={'class': 'form-control'}),
-        #     'autor': forms.TextInput(attrs={'class': 'form-control'}),
-        #     'resenia': forms.TextInput(attrs={'class': 'form-control'}),
-        # }
+        widgets = {
+            'titulo': forms.TextInput(attrs={'class': 'form-control'}),
+            'descripcion': forms.TextInput(attrs={'class': 'form-control'}),
+            'imagen': forms.TextInput(attrs={'class': 'form-control'}),
+            'sinopsis': forms.TextInput(attrs={'class': 'form-control'}),
+            'fecha_publicacion': forms.TextInput(attrs={'class': 'form-control'}),
+        }
+        
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        #se inicializan los widget obteniendo las actualizaciones con el metodo .update y se le da el estilo .form-control a los campos select
+        self.fields['autor'].widget.attrs.update({'class':'form-control'})
+        self.fields['critica'].widget.attrs.update({'class':'form-control'})
+        self.fields['genero'].widget.attrs.update({'class':'form-control'})
+        self.fields['estado'].widget.attrs.update({'class':'form-control'})
+        self.fields['resenia'].widget.attrs.update({'class':'form-control'})
+        self.fields['editorial'].widget.attrs.update({'class':'form-control'})
 
 class GeneroForm(forms.ModelForm):
 
@@ -82,6 +86,9 @@ class AutorForm(forms.ModelForm):
     class Meta:
         model = Autor
         fields = ['persona',]
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['persona'].widget.attrs.update({'class':'form-control'})
 
 class UsuarioForm(forms.ModelForm):
 
@@ -93,3 +100,7 @@ class UsuarioForm(forms.ModelForm):
             'correo': forms.EmailInput(attrs={'class': 'form-control'}),
             'contrasenia': forms.TextInput(attrs={'class': 'form-control'}),
         }
+    
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['persona'].widget.attrs.update({'class':'form-control'})
