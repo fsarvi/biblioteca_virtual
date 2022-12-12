@@ -17,8 +17,8 @@
             </div>
 
             <div class="card">
-                <div class="card-header">Crear Reseña</div>
-                <div class="card-body">
+                <div class="card-header bg-dark text-light">Crear reseña</div>
+                <div class="card-body bg-light">
                     <form action="{% url 'crear_resenia' %}" method="post" novalidate>
                         {% csrf_token %}
                         {% include 'administracion/layouts/partials/form.html' %}

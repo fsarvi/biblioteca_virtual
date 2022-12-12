@@ -1,0 +1,84 @@
+{% load static %}
+<div class="mt-md-4">
+
+    
+    <div class="container bg-dark rounded shadow-lg">
+
+        <div class="row" id="nav">
+
+            <h5 class="text-light text-center">*haga click en cualquier herramienta para desplegar</h5>
+
+            <div class="col text-center">
+
+                <div class="dropdown">
+                    <a class="btn btn-dark dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="{% static 'img/administracion/iconos/editar.png' %}" alt="">
+                        <h6>Editar</h6>
+                    </a>
+                  
+                    <ul class="dropdown-menu bg-dark" aria-labelledby="dropdownMenuLink">
+                        <li><a class="dropdown-item text-success" href="{% url 'crear_libro' %}">Libro</a></li>
+                        <li><a class="dropdown-item text-success" href="{% url 'crear_genero' %}">Género</a></li>
+                        <li><a class="dropdown-item text-success" href="{% url 'crear_editorial' %}">Editorial</a></li>
+                        <li><a class="dropdown-item text-success" href="{% url 'crear_critica' %}">Crítica</a></li>
+                        <li><a class="dropdown-item text-success" href="{% url 'crear_resenia' %}">Reseña</a></li>
+                        <li><a class="dropdown-item text-success" href="{% url 'crear_persona' %}">Persona</a></li>
+                        <li><a class="dropdown-item text-success" href="{% url 'crear_autor' %}">Autor</a></li>
+                        <li><a class="dropdown-item text-success" href="{% url 'crear_usuario' %}">Usuario</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+
+            <div class="col text-center">
+
+                <div class="dropdown">
+                    <a class="btn btn-dark dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="{% static 'img/administracion/iconos/agregar.png' %}" alt="">
+                        <h6>Agregar</h6>
+                    </a>
+                  
+                    <ul class="dropdown-menu bg-dark " aria-labelledby="dropdownMenuLink">
+                        <li><a class="dropdown-item text-success" href="{% url 'crear_libro' %}">Libro</a></li>
+                        <li><a class="dropdown-item text-success" href="{% url 'crear_genero' %}">Género</a></li>
+                        <li><a class="dropdown-item text-success" href="{% url 'crear_editorial' %}">Editorial</a></li>
+                        <li><a class="dropdown-item text-success" href="{% url 'crear_critica' %}">Crítica</a></li>
+                        <li><a class="dropdown-item text-success" href="{% url 'crear_resenia' %}">Reseña</a></li>
+                        <li><a class="dropdown-item text-success" href="{% url 'crear_persona' %}">Persona</a></li>
+                        <li><a class="dropdown-item text-success" href="{% url 'crear_autor' %}">Autor</a></li>
+                        <li><a class="dropdown-item text-success" href="{% url 'crear_usuario' %}">Usuario</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col text-center">
+
+                <div class="dropdown">
+                    <a class="btn btn-dark dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="{% static 'img/administracion/iconos/eliminar.png' %}" alt="">
+                        <h6>Eliminar</h6>
+                    </a>
+                  
+                    <ul class="dropdown-menu bg-dark " aria-labelledby="dropdownMenuLink">
+                        <li><a class="dropdown-item text-success" href="{% url 'crear_libro' %}">Libro</a></li>
+                        <li><a class="dropdown-item text-success" href="{% url 'crear_genero' %}">Género</a></li>
+                        <li><a class="dropdown-item text-success" href="{% url 'crear_editorial' %}">Editorial</a></li>
+                        <li><a class="dropdown-item text-success" href="{% url 'crear_critica' %}">Crítica</a></li>
+                        <li><a class="dropdown-item text-success" href="{% url 'crear_resenia' %}">Reseña</a></li>
+                        <li><a class="dropdown-item text-success" href="{% url 'crear_persona' %}">Persona</a></li>
+                        <li><a class="dropdown-item text-success" href="{% url 'crear_autor' %}">Autor</a></li>
+                        <li><a class="dropdown-item text-success" href="{% url 'crear_usuario' %}">Usuario</a></li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+        
+
+    </div>
+
+    
+    
+
+</div>

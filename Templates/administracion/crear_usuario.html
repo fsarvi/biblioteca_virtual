@@ -17,8 +17,8 @@
             </div>
 
             <div class="card">
-                <div class="card-header">Crear Usuario</div>
-                <div class="card-body">
+                <div class="card-header bg-dark text-light">Crear usuario</div>
+                <div class="card-body bg-light">
                     <form action="{% url 'crear_usuario' %}" method="post" novalidate>
                         {% csrf_token %}
                         {% include 'administracion/layouts/partials/form.html' %}

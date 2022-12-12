@@ -17,8 +17,8 @@
             </div>
 
             <div class="card">
-                <div class="card-header">Crear Editorial</div>
-                <div class="card-body">
+                <div class="card-header bg-dark text-light">Crear editorial</div>
+                <div class="card-body bg-light">
                     <form action="{% url 'crear_editorial' %}" method="post" novalidate>
                         {% csrf_token %}
                         {% include 'administracion/layouts/partials/form.html' %}

@@ -16,9 +16,9 @@
 				<h2 class="display-6 text-secondary">Administración</h2>
             </div>
 
-            <div class="card">
-                <div class="card-header">Crear Autor</div>
-                <div class="card-body">
+            <div class="card shadow">
+                <div class="card-header bg-dark text-light">Crear autor</div>
+                <div class="card-body bg-light">
                     <form action="{% url 'crear_autor' %}" method="post" novalidate>
                         {% csrf_token %}
                         {% include 'administracion/layouts/partials/form.html' %}

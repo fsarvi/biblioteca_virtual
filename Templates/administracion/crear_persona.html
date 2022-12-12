@@ -17,8 +17,8 @@
             </div>
 
             <div class="card">
-                <div class="card-header">Crear Persona</div>
-                <div class="card-body">
+                <div class="card-header bg-dark text-light">Crear persona</div>
+                <div class="card-body bg-light">
                     <form action="{% url 'crear_persona' %}" method="post" novalidate>
                         {% csrf_token %}
                         {% include 'administracion/layouts/partials/form.html' %}
