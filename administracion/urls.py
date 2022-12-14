@@ -1,10 +1,16 @@
 from django.contrib import admin
 from django.urls import path
+from django.contrib.auth import views as auth_view
 
 from . import views
 
 urlpatterns = [
+    path('administracion_login/', views.administracion_login, name='administracion_login'),
+    path('administracion_registro/', views.administracion_registro, name='administracion_registro'),
+    path('administracion_logout/', views.administracion_logout, name='administracion_logout'),
+    #path('administracion_logout/', auth_view.LoginView.as_view(template_name="index.html"), name='administracion_logout'),
     path('', views.inicio, name= 'inicio'),
+
     path('crear_libro/', views.crear_libro, name= 'crear_libro'),
     path('editar_libro/', views.editar_libro, name= 'editar_libro'),
     path('eliminar_libro/', views.eliminar_libro, name= 'eliminar_libro'),

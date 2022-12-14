@@ -1,20 +1,31 @@
 from django import forms
 from django.forms import ValidationError
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.models import User
 
 from biblioteca_virtual.models import *
 
 
+class RegistrarUsuario(UserCreationForm):
+    class Meta:
+        model = User
+        fields = ['username', 'password1', 'password2']
+
+
+
 class LibroForm(forms.ModelForm):
+
 
     class Meta:
         model = Libro
+
         #imagen como campo charfield, pasar a uno que se puede cargar imagen?
         fields = ['titulo', 'descripcion', 'imagen', 'sinopsis', 'fecha_publicacion',
                   'editorial', 'genero', 'critica', 'estado', 'autor', 'resenia']
         widgets = {
             'titulo': forms.TextInput(attrs={'class': 'form-control'}),
             'descripcion': forms.TextInput(attrs={'class': 'form-control'}),
-            'imagen': forms.TextInput(attrs={'class': 'form-control'}),
+            'imagen': forms.TextInput(attrs={'class': 'form-control', 'type':'file'}),
             'sinopsis': forms.TextInput(attrs={'class': 'form-control'}),
             'fecha_publicacion': forms.TextInput(attrs={'class': 'form-control'}),
         }
