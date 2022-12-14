@@ -40,6 +40,11 @@ html,body {
 	background-color: rgba(86, 255, 170, 0.322);
 }
 
+.flex-x{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
 
 
 /* -------------------------------------------------MENU ---------- NAV-BAR ---------------------------------------------------------------- */
@@ -704,3 +709,17 @@ ul .imagen_equipo{
 	height: fit-content;
 }
 
+
+
+
+/*######################################################...ADMINISTRACION_LOGIN.HTML...######################################################*/
+
+.height-login{
+	height: 400px;
+}
+
+.bg-libro{
+	background-image: url(/static/img/fondolibro.webp);
+	background-position: center;
+	background-size: cover;
+}
