@@ -23,12 +23,18 @@ def index(request):
     libros = Libro.objects.all().values()
     generos = Genero.objects.all().values()
     estados = Estado.objects.all().values()
-    libros = {"libros": libros, "generos": generos, "estados":estados}  
+    libro_estados = zip(libros,estados)
+    libros = {"libro_estados": libro_estados, "generos": generos}  
 
     return render(request, 'index.html', libros)
 
 def favoritos(request):
-    return render(request, 'favoritos.html')
+    libros = Libro.objects.all().values()
+    estados = Estado.objects.all().values()
+    datos = Libro.objects.all().prefetch_related('genero').values()
+    libro_estados = zip(libros,estados)
+    libros = {"libro_estados": libro_estados, "datos":datos}
+    return render(request, 'favoritos.html',libros)
 
 def resenias(request):
 
@@ -239,7 +245,7 @@ def llenar_libros(request):
     libro_intercambio = Libro(
         titulo="El intercambio",
         descripcion="Lorem ipsum consectetuer adipiscing",
-        imagen="pic11",
+        imagen="intercambio.jpg",
         sinopsis="Un intercambio de casas es el detonante de la crisis de un matrimonio en este hipnótico thriller.",
         fecha_publicacion=datetime.strptime("2018/26/4", '%Y/%d/%m'),
         editorial=editorial_unica,
@@ -255,7 +261,7 @@ def llenar_libros(request):
     libro_dune = Libro(
         titulo="Dune",
         descripcion="Lorem ipsum consectetuer adipiscing",
-        imagen="pic12",
+        imagen="dune.jpg",
         sinopsis= """Mezcla fascinante de aventura, misticismo, intrigas políticas y ecologismo, Dune se convirtió,
          desde el momento de su publicación, en un fenómeno de culto y en la mayor epopeya de ciencia-ficción de todos los tiempos.""",
         fecha_publicacion=datetime.strptime("1965/1/8", '%Y/%d/%m'),
@@ -271,7 +277,7 @@ def llenar_libros(request):
     libro_gato_negro = Libro(
         titulo="El gato negro",
         descripcion="Lorem ipsum consectetuer adipiscing",
-        imagen="pic13",
+        imagen="elgatonegro.jpg",
         sinopsis="""El gato negro y otros relatos es una recopilacion de los cuentos mas notables de Poe, 
         en los que destaca El gato negro, William Wilson y La carta robada""",
         fecha_publicacion=datetime.strptime("1843/19/8", '%Y/%d/%m'),
@@ -286,9 +292,9 @@ def llenar_libros(request):
         genero_horror, genero_policial, genero_psicologico)
     
     libro_perdida = Libro(
-        titulo="El gato negro",
+        titulo="Perdida",
         descripcion="Lorem ipsum consectetuer adipiscing",
-        imagen="pic14",
+        imagen="perdida.jpg",
         sinopsis= """No pierdas el tren.Perdida es tu próxima parada. 
         El libro que se ha convertido en un referente del thriller psicológico contemporáneo""" ,
         fecha_publicacion=datetime.strptime("2012/24/5", '%Y/%d/%m'),
@@ -304,7 +310,7 @@ def llenar_libros(request):
     libro_tunel = Libro(
         titulo="El gato negro",
         descripcion="Lorem ipsum consectetuer adipiscing",
-        imagen="pic15",
+        imagen="eltunel.jpg",
         sinopsis= """El amor ilimitado truncado por un engaño convertirá el corazón de un hombre en 
         un pedazo de duro y frío hielo y colocará en sus manos el cuchillo que pone final al sufrimiento. 
         Sabato nos entrega los elementos básicos de su visión metafísica del existir""" ,
@@ -321,7 +327,7 @@ def llenar_libros(request):
     libro_lector_cadaveres = Libro(
         titulo="El lector de cadaveres",
         descripcion="Lorem ipsum consectetuer adipiscing",
-        imagen="pic16",
+        imagen="ellectordecadaveres.jpg",
         sinopsis= """Un absorbente thriller histórico en el que la ambición y el odio 
         van de la mano con el amor y la muerte en la exótica y fastuosa China medieval.""" ,
         fecha_publicacion=datetime.strptime("2011/5/10", '%Y/%d/%m'),
@@ -337,7 +343,7 @@ def llenar_libros(request):
     libro_memento = Libro(
         titulo="Memento",
         descripcion="Lorem ipsum consectetuer adipiscing",
-        imagen="pic22",
+        imagen="pic22.jpg",
         sinopsis= """La primera entrega de la trilogía «Versos, canciones 
         y trocitos de carne», una novela negra narrada con un dinámico y atrevido lenguaje cinematográfico.""" ,
         fecha_publicacion=datetime.strptime("2013/1/1", '%Y/%d/%m'),
