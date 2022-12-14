@@ -69,7 +69,8 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'biblioteca_virtual',
         'USER': 'postgres',
-        'PASSWORD': 'fati417',
+        'PASSWORD': 'Sheila852',
+        # 'PASSWORD': 'fati417',
         'HOST': 'localhost',
         'PORT': '5432',
     }
