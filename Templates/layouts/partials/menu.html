@@ -19,8 +19,8 @@
 							<li class="current"><a href="{% url 'index' %}">libros</a></li>
 							<li><a href="{% url 'favoritos' %}">favoritos</a></li>
 							<li><a href="{% url 'reseñas' %}">Reseñas</a></li>
-							<li><a href="{% url 'pendientes' %}">Pendientes</a></li>	
-
+							<li><a href="{% url 'pendientes' %}">Pendientes</a></li>
+								
 							<div class="clear">
                             </div>
 						</ul>
@@ -32,6 +32,36 @@
 						</div>
 						<button id="lupa" class="btn btn-outline-success" onmouseover="desplegarBuscador()" onclick="cierreBuscador()">
 						</button>
+
+						{% if user.is_authenticated %}
+							
+						<div class="dropdown">
+							<a class="btn btn-outline-dark dropdown-toggle d-flex" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+								<img src="{% static 'img/user40x40.png' %}" alt="">
+								<h6 class="text-white ms-2">Hola <br> {{user.username}}</h6>
+							</a>
+						  
+							<ul class="dropdown-menu bg-dark" aria-labelledby="dropdownMenuLink">
+								
+								<li><a class="dropdown-item text-success" href="{% url 'inicio' %}">Administracion</a></li>
+								<li><a class="dropdown-item text-success" href="{% url 'administracion_logout' %}">Logout</a></li>
+							</ul>
+						</div>
+
+						{% else %}
+
+							<div class="dropdown">
+								<a class="btn btn-outline-dark dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+									<img src="{% static 'img/user40x40.png' %}" alt="">
+								</a>
+							  
+								<ul class="dropdown-menu bg-dark" aria-labelledby="dropdownMenuLink">
+									<li><a class="dropdown-item text-success" href="{% url 'administracion_login' %}">Login</a></li>
+									<li><a class="dropdown-item text-success" href="{% url 'administracion_registro' %}">Registrarse</a></li>
+								</ul>
+							</div>
+								
+						{% endif %}
 					</div>
     	    	</div>
 

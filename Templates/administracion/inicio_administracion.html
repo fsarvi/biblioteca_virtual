@@ -23,7 +23,7 @@
 						{% comment "" %}
 							|add:imagen|add: YA CUMPLE COMO FILTRO EN LA TEMPLATE
 						{% endcomment %}
-							<img src="{% static 'img/'|add:libro.imagen|add:'.jpg' %}" class="img-fluid" alt=""/>
+							<img src="{% static 'img/'|add:libro.imagen %}" class="img-fluid" alt=""/>
 
 							
 							{% if libro.nuevo %}

@@ -15,7 +15,7 @@
 				<h1 class="display-1"> Bienvenido</h1>
 				<h2 class="display-6 text-secondary">Libros por orden de puntuacion</h2>
 
-				{% for libro in libros %}
+				{% for libro, estado in libro_estados %}
 
 					<div class="col-md-3 book_box mb-3">
 							
@@ -23,16 +23,16 @@
 						{% comment "" %}
 							|add:imagen|add: YA CUMPLE COMO FILTRO EN LA TEMPLATE
 						{% endcomment %}
-							<img src="{% static 'img/'|add:libro.imagen|add:'.jpg' %}" class="img-fluid" alt=""/>
+							<img src="{% static 'img/'|add:libro.imagen %}" class="img-fluid" alt=""/>
 
 							
-							{% if libro.nuevo %}
+							{% if estado.nuevo %}
 							<span class="new-box">
 								<span class="new-label">Nuevo</span>
 							</span>
 							{% endif %}
 
-							{% if libro.leyendo %}
+							{% if estado.leyendo %}
 							<span class="lectura-box">
 								<span class="lectura-label">Leyendo</span>
 							</span>

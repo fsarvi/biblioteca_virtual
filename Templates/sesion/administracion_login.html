@@ -1,0 +1,35 @@
+{% extends 'sesion/base.html' %}
+{% block titulo %}Inicie sesion{% endblock titulo %}
+{% block content %}
+
+
+<div>
+    {% for message in messages %}
+        <div class="text-danger alert alert-{{ message.tags }}" role="alert">
+            {{message}}
+        </div>
+    {% endfor %}
+</div>
+<form class="bg-dark p-sm-3 p-md-5 shadow-lg rounded" method="POST" style="border-radius:1%;">
+    <h1 class="display-6 pb-md-5 pb-2 text-center text-success"> <strong> Login</strong></h1>
+    {% csrf_token %}
+    
+    {% for formulario in form %}
+    <fieldset class="form-group">    
+        <label class="text-success" for="">{{formulario.label}}</label>
+        <br>
+        <input 
+            type="{{formulario.field.widget.input_type}}" 
+            name="{{formulario.name}}" 
+            id="{{formulario.name}}"
+            class="form-control mb-2 mb-md-5"
+            placeholder="{{formulario.name}}"
+            value="{{ formulario.value | default:'' }}"
+        >
+        
+    </fieldset>
+    {% endfor %}
+    <button class="btn btn-success flex-x" type="submit"> Login</button>
+  <a class="link-success badge" href="#"> ¿No tenes cuenta? registrate aqui!</a>
+</form>
+{% endblock %}

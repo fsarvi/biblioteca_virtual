@@ -14,32 +14,66 @@
     </div>
 </div>
 
+
+    
 <div class="container shadow-lg">
     <div class="row contenedor-favoritos">
+
         <div class="p-2 p-md-5 text-center">
             <img src="{% static 'img/favoritos/iconos/favoritos.png' %}" alt="">
             <h1 class="text-success display-3">Libros marcados</h1>
             <h1 class="text-success display-3">como <strong class="text-uppercase">favoritos</strong></h1>
         </div>
         <hr>
-        <a href="#" class="col-md-4 col-lg-3 mb-3">
-            <div class="bg-translucido text-success rounded text-center pt-3 pb-2 favoritos">
-                <img class="" src="{% static 'img/favoritos/kafka.webp' %}" alt="">
-                <h6>Haruki Murakami</h6>
-                <h3>Kafka en la orilla</h3>
-                <div class="iconos-favoritos">
-                    <span class="text-dark">
-                        <img src="{% static 'img/favoritos/iconos/nuevo.png' %}" alt="">
-                        <h6>Nuevo</h6>
-                    </span>
-                    <span>
-                        <img src="{% static 'img/favoritos/iconos/leyendo.png' %}" alt="">
-                        <h6>Leyendo</h6>
-                    </span>
-                </div>
-                <span class="bg-translucido">Genero: drama</span>
-            </div>
-        </a>
+
+
+        {% for libro,estado in libro_estados %}
+            
+            {% if estado.favorito %}
+                <a href="#" class="col-md-4 col-lg-3 mb-3">
+                    <div class="bg-translucido text-success rounded text-center pt-3 pb-2 favoritos">
+                        <img class="" src="{% static 'img/favoritos/'|add:libro.imagen %}" alt="">
+                        <h6>{{libro.autor.persona}}</h6>
+                        <h3>{{libro.titulo}}</h3>
+                        <div class="iconos-favoritos">
+                            
+                            {% if estado.nuevo %}
+                            <span class="text-dark">
+                                <img src="{% static 'img/favoritos/iconos/nuevo.png' %}" alt="">
+                                <h6>Nuevo</h6>
+                            </span>    
+                            {% endif %}
+                                
+                            
+                            {% if estado.leyendo %}    
+                            <span>
+                                <img src="{% static 'img/favoritos/iconos/leyendo.png' %}" alt="">
+                                <h6>Leyendo</h6>
+                            </span>
+                            {% endif %}
+
+                            
+                            {% if estado.leido %}
+                            <span>
+                                <img src="{% static 'img/favoritos/iconos/leido.png' %}" alt="">
+                                <h6>Finalizado</h6>
+                            </span>
+                            {% endif %}
+                                
+                                
+                        </div>
+                        <span class="bg-translucido">
+                            
+                            {% for generos in libro.genero.all %}
+                                {{generos.nombre}}
+                            {% endfor %}
+                                
+                        </span>
+                    </div>
+                </a>
+            {% endif %}
+
+        {% endfor %}
 
         <a href="#" class="col-md-4 col-lg-3 mb-3">
             <div class="bg-translucido text-success rounded text-center pt-3 pb-2 favoritos">
@@ -55,7 +89,8 @@
                 <span class="bg-translucido">Genero: drama</span>
             </div>
         </a>
-
+        
+        <!-- 
         <a href="#" class="col-md-4 col-lg-3 mb-3">
             <div class="bg-translucido text-success rounded text-center pt-3 pb-2 favoritos">
                 <img class="" src="{% static 'img/favoritos/casaespiritus.webp' %}" alt="">
@@ -138,7 +173,7 @@
                 <span class="bg-translucido">Genero: drama</span>
             </div>
         </a>
-
+ -->
     </div>
     <hr>
 </div>
